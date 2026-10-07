@@ -6,6 +6,22 @@ The live task is 30 minutes. Everything here is built for speed: read the schema
 
 ---
 
+## Working from column names only (standing rule)
+
+Tarun will send **column names and maybe data types, never the rows**. So:
+
+- I can't see grain, nulls, value sets, date ranges, duplicates or test rows. I **infer** them from names and types, label every inference as an **assumption**, and never state a data fact as known.
+- Ask for the cheap facts in one batch, as queries he can run in 2 minutes:
+  - Grain: `SELECT COUNT(*), COUNT(DISTINCT <id_col>) FROM t;` (equal = one row per id)
+  - Status/outcome values: `SELECT <status_col>, COUNT(*) FROM t GROUP BY 1 ORDER BY 2 DESC;`
+  - Date range: `SELECT MIN(<date_col>), MAX(<date_col>) FROM t;`
+  - Nulls: `SELECT COUNT(*) - COUNT(<col>) AS nulls FROM t;`
+  - Join fan-out: row counts before and after the join.
+- Rank KPIs by what the **column names make possible**, and mark each as *confirmed by schema* or *depends on assumption X*.
+- SQL I write uses his column names exactly. Where a value is a guess (e.g. `status = 'sold'`), I say so and tell him to check it with the status query.
+- I can't compute results. He runs the queries and sends me the numbers (pasted or screenshot), and I help interpret them and build the story from those. I never invent figures. Any example numbers I use are clearly labelled illustrative.
+- Types help: a `timestamp` pair gives durations and funnels, `numeric` gives sums and averages, `boolean` is a flag/rate, a `string` with few values is a dimension, and an ID is a join key.
+
 ## Step 0: Read the brief before the columns
 
 The brief decides the ranking more than the columns do. Before anything else, pin down:
