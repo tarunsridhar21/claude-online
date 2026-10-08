@@ -1,22 +1,23 @@
 # KPI playbook for a used-car marketplace
 
-54 KPIs across Finance, Marketing, Operations, Commercial and Product, for a business in the style of Motorway. Each KPI is ranked inside its department, and each has its formula, the data it needs, the insights it can give, the best visual on each platform, and what to use when the data is thin.
+59 KPIs across Finance, Marketing, Operations, Commercial and Product, for a business in the style of Motorway. Each KPI is ranked inside its department, and each has its formula, the data it needs, the insights it can give, the best visual on each platform, and what to use when the data is thin.
 
 ## How to use this file
 
 - **Ten minutes:** read Part 1. It shows how the KPIs connect, what to check when one moves, and the ranking for every department.
 - **Building a chart:** find the KPI card in Part 4, then follow its visual number (V1 to V17) to Part 3 for the full recipe on your platform.
-- **Explaining a KPI out loud:** use the card's formula, one line from "Insights it can give", and the sentence pattern in appendix C.
+- **Explaining a KPI out loud:** each card has an example sentence. Add one line from "Insights it can give", or use the pattern in appendix C.
+- **Coming from another industry:** section 1.4 maps general business metrics (CAC, LTV, ARPU, churn, AOV) to the KPIs here.
 
 ## Contents
 
-- **Part 1: The map.** How the KPIs connect. What to check when one moves. The ranked tables.
+- **Part 1: The map.** How the KPIs connect. What to check when one moves. The ranked tables. A translation from general business metrics.
 - **Part 2: The method.** Evidence tags. How the ranking works. Rules for every KPI. Single value or chart. What to do when the data is thin.
 - **Part 3: The visual library.** 17 visuals, each with when to use it and how to build it in Looker Studio, Streamlit, Python, SQL and the Antigravity IDE.
-- **Part 4: The KPI cards.** Finance (F1 to F11), Marketing (M1 to M11), Operations (O1 to O10), Commercial (C1 to C11), Product (P1 to P11).
+- **Part 4: The KPI cards.** Finance (F1 to F13), Marketing (M1 to M12), Operations (O1 to O11), Commercial (C1 to C12), Product (P1 to P11).
 - **Appendices.** Platform limits. Drill-down terms. A sentence pattern for interviews. Sources and caveats.
 
-Companion files in this folder: the KPI sheets (`1_finance_kpis.png` to `5_product_kpis.png`), the sample dashboards (`dashboard_1_finance.png` to `dashboard_5_product.png`), and `KPI_REFERENCE.md`. The images cover the first 40 KPIs.
+Companion files in this folder: the KPI sheets (`1_finance_kpis.png` to `5_product_kpis.png`), the sample dashboards (`dashboard_1_finance.png` to `dashboard_5_product.png`), and `KPI_REFERENCE.md`. The eight-panel images cover the first 40 KPIs. `top_dashboard_1_finance.png` to `top_dashboard_5_product.png` show the top six in each department, with how to read each one.
 
 ---
 
@@ -81,13 +82,15 @@ Scores are out of 5. The method is in Part 2.
 | F2 | GMV: value of cars sold | 4.30 | Headline | Single value + chart | Line chart against last year or last period | M |
 | F3 | Net cash burn and runway | 4.15 | Headline | Single value + chart | Scorecard: one number with its change | I |
 | F4 | Revenue (turnover) | 4.15 | Core | Single value + chart | Column chart | M |
-| F5 | Take rate | 3.95 | Core | Single value + chart | Line chart with a target line or band | S |
-| F6 | Average revenue per active dealer | 3.85 | Core | Single value + chart | Line chart against last year or last period | P |
-| F7 | Adjusted EBITDA | 3.65 | Core | Chart | Column chart | P |
-| F8 | Operating costs as a share of revenue | 3.50 | Supporting | Single value + chart | Stacked column chart | I |
-| F9 | Pre-tax loss | 3.50 | Supporting | Single value + chart | Waterfall chart | M |
-| F10 | Revenue per car sold | 3.45 | Supporting | Single value + chart | Line chart against last year or last period | P |
-| F11 | Share of sales paid through Motorway Pay | 3.20 | Supporting | Single value + chart | Area chart | M |
+| F5 | Dealer net revenue retention | 4.00 | Core | Single value + chart | Waterfall chart | S |
+| F6 | Take rate | 3.95 | Core | Single value + chart | Line chart with a target line or band | S |
+| F7 | Average revenue per active dealer | 3.85 | Core | Single value + chart | Line chart against last year or last period | P |
+| F8 | Average sale price | 3.65 | Supporting | Chart | Line chart against last year or last period | G |
+| F9 | Adjusted EBITDA | 3.65 | Supporting | Chart | Column chart | P |
+| F10 | Operating costs as a share of revenue | 3.50 | Supporting | Single value + chart | Stacked column chart | I |
+| F11 | Pre-tax loss | 3.50 | Supporting | Single value + chart | Waterfall chart | M |
+| F12 | Revenue per car sold | 3.45 | Supporting | Single value + chart | Line chart against last year or last period | P |
+| F13 | Share of sales paid through Motorway Pay | 3.20 | Supporting | Single value + chart | Area chart | M |
 
 **Marketing:** *Are we bringing in sellers who go on to sell, at a sensible cost?*
 
@@ -98,12 +101,13 @@ Scores are out of 5. The method is in Part 2.
 | M3 | Valuations started | 4.05 | Headline | Single value + chart | Area chart | I |
 | M4 | CAC payback | 4.00 | Core | Single value + chart | Ranked horizontal bar chart | S |
 | M5 | Seller satisfaction (NPS or CSAT) | 3.90 | Core | Single value + chart | Scorecard: one number with its change | S |
-| M6 | Organic share of valuations | 3.80 | Core | Single value + chart | 100% stacked column chart (mix over time) | S |
-| M7 | Cost per valuation (cost per lead) | 3.35 | Core | Single value + chart | Line chart against last year or last period | I |
-| M8 | Review score | 2.70 | Supporting | Single value + chart | Scorecard: one number with its change | M |
-| M9 | Seller price advantage | 2.65 | Supporting | Single value + chart | Scorecard: one number with its change | M |
-| M10 | Visits and engagement | 2.55 | Supporting | Single value + chart | Combo chart with two axes (columns plus a line) | P |
-| M11 | Brand awareness | 2.55 | Supporting | Single value + chart | Line chart with a target line or band | M |
+| M6 | Revenue per valuation | 3.90 | Core | Single value + chart | Ranked horizontal bar chart | G |
+| M7 | Organic share of valuations | 3.80 | Core | Single value + chart | 100% stacked column chart (mix over time) | S |
+| M8 | Cost per valuation (cost per lead) | 3.35 | Supporting | Single value + chart | Line chart against last year or last period | I |
+| M9 | Review score | 2.70 | Supporting | Single value + chart | Scorecard: one number with its change | M |
+| M10 | Seller price advantage | 2.65 | Supporting | Single value + chart | Scorecard: one number with its change | M |
+| M11 | Visits and engagement | 2.55 | Supporting | Single value + chart | Combo chart with two axes (columns plus a line) | P |
+| M12 | Brand awareness | 2.55 | Supporting | Single value + chart | Line chart with a target line or band | M |
 
 **Operations:** *Does every agreed sale complete quickly, safely and without disputes?*
 
@@ -117,8 +121,9 @@ Scores are out of 5. The method is in Part 2.
 | O6 | Completed sales | 4.00 | Core | Single value + chart | Column chart | I |
 | O7 | Days to seller payment | 3.80 | Core | Single value + chart | Histogram with median and threshold lines | I |
 | O8 | On-time collection and cost per move | 3.75 | Supporting | Chart | Combo chart with two axes (columns plus a line) | I |
-| O9 | Problem vehicles stopped | 3.70 | Supporting | Chart | Stacked column chart | I |
-| O10 | Seller verification coverage | 3.00 | Supporting | Single value + chart | Line chart with a target line or band | M |
+| O9 | Claim cost and resolution time | 3.75 | Supporting | Single value + chart | Ranked horizontal bar chart | G |
+| O10 | Problem vehicles stopped | 3.70 | Supporting | Chart | Stacked column chart | I |
+| O11 | Seller verification coverage | 3.00 | Supporting | Single value + chart | Line chart with a target line or band | M |
 
 **Commercial:** *Are enough dealers bidding, buying and coming back?*
 
@@ -132,9 +137,10 @@ Scores are out of 5. The method is in Part 2.
 | C6 | Sale price against market guide | 4.00 | Core | Single value + chart | Histogram with median and threshold lines | M |
 | C7 | Market depth: bidders per car | 3.90 | Core | Single value + chart | Histogram with median and threshold lines | S |
 | C8 | Dealer concentration and retention | 3.85 | Supporting | Single value + chart | Cumulative share curve (Pareto or Lorenz) | S |
-| C9 | Cars in the daily sale | 3.60 | Supporting | Single value + chart | Line chart against last year or last period | M |
-| C10 | Motorway Pay adoption (dealers) | 3.20 | Supporting | Single value + chart | Area chart | M |
-| C11 | Verified dealers | 2.55 | Supporting | Single value + chart | Line chart against last year or last period | M |
+| C9 | Dealer lifetime value and LTV to CAC | 3.85 | Supporting | Single value + chart | Ranked horizontal bar chart | G |
+| C10 | Cars in the daily sale | 3.60 | Supporting | Single value + chart | Line chart against last year or last period | M |
+| C11 | Motorway Pay adoption (dealers) | 3.20 | Supporting | Single value + chart | Area chart | M |
+| C12 | Verified dealers | 2.55 | Supporting | Single value + chart | Line chart against last year or last period | M |
 
 **Product:** *Is the journey easy to finish, and is the car information accurate?*
 
@@ -152,6 +158,42 @@ Scores are out of 5. The method is in Part 2.
 | P10 | Paid listing uptake | 3.10 | Supporting | Single value + chart | Line chart with a target line or band | I |
 | P11 | Service-history extraction accuracy | 3.00 | Supporting | Single value + chart | Line chart with a target line or band | M |
 
+## 1.4 From general business metrics to this marketplace
+
+Most business metrics are the same few ideas under different names: what it costs to win a customer, what a customer is worth, whether they come back, how active they are, and how fast stock turns. If you know a metric from SaaS, retail or logistics, this table shows its equivalent here.
+
+| General metric (where it is used) | Equivalent in this playbook | Note |
+|---|---|---|
+| GMV (retail) | F2 GMV: value of cars sold | Same metric. |
+| Average order value (retail) | F8 Average sale price | Called average sale price here. |
+| Conversion rate (SaaS, retail) | M1 Valuation-to-sale conversion, P1 Funnel completion by step | End to end, and step by step. |
+| Cart abandonment rate (retail) | P1 Funnel completion by step | The drop between funnel steps. |
+| Customer acquisition cost (SaaS, retail, insurance); cost per gross add (telecoms) | M2 Cost per car sold, M4 CAC payback, M8 Cost per valuation (cost per lead) | Cost per completed sale is the honest version. |
+| Lifetime value and LTV to CAC (SaaS, retail) | C9 Dealer lifetime value and LTV to CAC | Applies to dealers, who buy repeatedly. A seller usually sells once. |
+| Revenue per visitor (retail) | M6 Revenue per valuation | Valuations replace visitors. |
+| ARPU (SaaS, media, telecoms) | F7 Average revenue per active dealer, F12 Revenue per car sold | Per dealer on the buying side, per car on the selling side. |
+| ARR and MRR (SaaS) | F4 Revenue (turnover), F5 Dealer net revenue retention | No direct equivalent: revenue is per transaction, not by subscription. Net revenue retention gives the predictability view. |
+| Net revenue retention (SaaS) | F5 Dealer net revenue retention | Applied to dealer fee revenue. |
+| Churn and retention rate (SaaS, media, telecoms, insurance, retail) | P2 Retention cohorts (dealers), P6 Repeat seller rate, C8 Dealer concentration and retention | Dealers by cohort. Sellers over a long window. |
+| DAU and MAU (SaaS, media) | C2 Active dealers, P9 Dealer engagement curve (power users) | Active dealers, and how many days a month they are active. |
+| Subscriber growth rate (media, telecoms) | C12 Verified dealers, C2 Active dealers | Growth in verified and active dealers. |
+| Engagement rate, watch time (media) | C3 Bid volume and bids per car, M11 Visits and engagement | Bids per car is the engagement that matters here. |
+| NPS, CSAT, satisfaction index (insurance, telecoms, healthcare) | M5 Seller satisfaction (NPS or CSAT), M9 Review score | Survey score and public reviews. |
+| Inventory turnover (retail, logistics, manufacturing) | C4 Cumulative sell-through curve, O5 Time to sell | Motorway holds no stock. It is the sellers' cars that turn. |
+| Fill rate (logistics) | C1 Sell-through, C7 Market depth: bidders per car | The share of supply that finds a buyer. |
+| On-time delivery, delivery time, order cycle time, lead time (logistics, manufacturing) | O8 On-time collection and cost per move, O5 Time to sell, O7 Days to seller payment | Collection, sale and payment each have their own clock. |
+| Transport cost per order (logistics) | O8 On-time collection and cost per move | Cost per move. |
+| Order accuracy, defect rate, yield (logistics, manufacturing) | P5 Condition grade accuracy, O3 Price changed at collection, P3 Valuation accuracy | Is the car as described, and is the estimate right. |
+| Return or refund rate (retail, manufacturing) | O1 Completion rate (and fall-through), O2 Claims (arbitration) rate by dealer | A sale that falls through, or is disputed afterwards. |
+| Claims frequency, claims severity, claims processing time (insurance, healthcare) | O2 Claims (arbitration) rate by dealer, O9 Claim cost and resolution time | How often, how much, how long. |
+| Forecast accuracy (logistics) | P3 Valuation accuracy | A valuation is a price forecast. |
+| Net profit margin, operating margin (retail, energy) | F11 Pre-tax loss, F9 Adjusted EBITDA, F10 Operating costs as a share of revenue, F1 Contribution per car | Margin at company level and per car. |
+| Network uptime, grid reliability (telecoms, energy) | P7 App rating and stability, P8 Page speed (Core Web Vitals) | App stability and page speed. |
+
+Revenue per employee is easy to add (revenue ÷ headcount) but was left out as a low-value figure here. Capacity, asset and warehouse utilisation have no close equivalent, because Motorway holds no stock or plant. Metrics specific to one industry (bed occupancy, mortality rate, loss and combined ratio, solvency ratio, CO₂ intensity, 5G coverage, OEE, scrap rate) do not apply.
+
+The general metrics come from the Business Metrics Cheatsheet for Data Analysts (The Analytics Accelerator). The mapping to a used-car marketplace is mine.
+
 ---
 
 # Part 2: The method
@@ -163,9 +205,10 @@ Scores are out of 5. The method is in Part 2.
 | **M** | Motorway has said this publicly |
 | **P** | A listed peer reports or defines it |
 | **S** | Standard metric from a recognised source (a16z for marketplaces, Google web.dev for web speed) |
+| **G** | General business metric from the Analytics Accelerator cheatsheet, adapted to a marketplace by me |
 | **I** | My inference. Nobody has published it for Motorway |
 
-Motorway does not publish its KPI list. 16 of the 54 KPIs are tagged I. Do not say Motorway tracks an I KPI. Say it is the kind of measure such a business would watch.
+Motorway does not publish its KPI list. 16 of the 59 KPIs are tagged I. Do not say Motorway tracks an I KPI. Say it is the kind of measure such a business would watch.
 
 ## 2.2 How the ranking works
 
@@ -506,12 +549,12 @@ Each visual is defined once here. KPI cards refer to these by number.
 **Suggested page layout**
 - **Top row, single values:** Contribution per car, GMV: value of cars sold, Net cash burn and runway, Revenue (turnover). Each with its change against the last period.
 - **Middle, the Headline charts:** Contribution per car (waterfall chart); GMV: value of cars sold (line chart against last year or last period); Net cash burn and runway (scorecard: one number with its change).
-- **Lower, the Core diagnostics:** Revenue (turnover), Take rate, Average revenue per active dealer, Adjusted EBITDA.
-- **Second page or drill through:** Operating costs as a share of revenue, Pre-tax loss, Revenue per car sold, Share of sales paid through Motorway Pay.
+- **Lower, the Core diagnostics:** Revenue (turnover), Dealer net revenue retention, Take rate, Average revenue per active dealer.
+- **Second page or drill through:** Average sale price, Adjusted EBITDA, Operating costs as a share of revenue, Pre-tax loss, Revenue per car sold, Share of sales paid through Motorway Pay.
 
 ### F1. Contribution per car
 
-`Headline` · rank 1 of 11 · score **4.65** · evidence **S** · from the first sheets
+`Headline` · rank 1 of 13 · score **4.65** · evidence **S** · from the first sheets
 
 *Scores: decision 5, goal link 5, diagnostic 5, early warning 4, measurable 3.*
 
@@ -520,6 +563,8 @@ Each visual is defined once here. KPI cards refer to these by number.
 - **Formula:** Revenue per car − variable cost per car (marketing, transport, payments, support, verification).
 - **Data needed:** Revenue per completed sale. Variable costs per sale, or an allocation rule such as monthly cost ÷ monthly completed sales.
 - **Evidence (S):** a16z lists unit economics as a core marketplace metric: whether the business is profitable per unit. Motorway does not publish it. The nearest listed peer measure is Carvana's total gross profit per unit, though Carvana owns the cars it sells.
+- **Who uses it:** Finance, Executive Team, Marketing.
+- **In a sentence (sample numbers):** "Contribution per car is £217, up £9 on last month, mainly because transport cost per car fell."
 
 **Why it ranks here:** It decides whether growth makes or loses money. With a stated aim of profit by mid-2026, this is the number that explains the pre-tax loss one level down, and the first one to check after any pricing or marketing change. It loses points only on measurability, because costs must be allocated to each car.
 
@@ -566,7 +611,7 @@ SELECT step, gbp_per_car FROM (
 
 ### F2. GMV: value of cars sold
 
-`Headline` · rank 2 of 11 · score **4.30** · evidence **M** · from the first sheets
+`Headline` · rank 2 of 13 · score **4.30** · evidence **M** · from the first sheets
 
 *Scores: decision 5, goal link 5, diagnostic 3, early warning 3, measurable 5.*
 
@@ -575,6 +620,8 @@ SELECT step, gbp_per_car FROM (
 - **Formula:** Sum of the final sale price of completed sales. Exclude all fees.
 - **Data needed:** One row per completed sale with `sale_price` and `completed_date`.
 - **Evidence (M):** Motorway reported £2.2bn of cars sold in 2023. ACV Auctions defines Marketplace GMV the same way in its 10-K.
+- **Who uses it:** Finance, Executive Team, Commercial.
+- **In a sentence (sample numbers):** "GMV reached £252m in September, 11% above last year."
 
 **Why it ranks here:** Revenue is GMV multiplied by take rate, so volume starts here. It ranks below contribution because it measures size, not profit, and it can rise while the business loses more money per car.
 
@@ -618,7 +665,7 @@ GROUP BY 1 ORDER BY 1;   -- last year: join this result to itself on month - INT
 
 ### F3. Net cash burn and runway
 
-`Headline` · rank 3 of 11 · score **4.15** · evidence **I** · added in round 2
+`Headline` · rank 3 of 13 · score **4.15** · evidence **I** · added in round 2
 
 *Scores: decision 5, goal link 5, diagnostic 2, early warning 4, measurable 4.*
 
@@ -627,6 +674,8 @@ GROUP BY 1 ORDER BY 1;   -- last year: join this result to itself on month - INT
 - **Formula:** Net burn = cash out − cash in per month. Runway in months = cash balance ÷ average monthly net burn (use the last 3 months).
 - **Data needed:** Monthly cash flow or bank balance series. This is management accounts data, not marketplace data.
 - **Evidence (I):** Not published for Motorway. Motorway's public statement is an aim to be profitable by mid-2026 (M). Burn and runway are the standard way to judge any company that reports a loss.
+- **Who uses it:** Finance, Executive Team.
+- **In a sentence (sample numbers):** "At the current burn of £1.6m a month we have about 26 months of runway."
 
 **Why it ranks here:** A company with a pre-tax loss lives or dies on this. It ranks above revenue because it changes a decision sooner: cut spend, or raise money.
 
@@ -671,7 +720,7 @@ FROM monthly_cash;   -- if burn is zero or negative, runway is not defined: show
 
 ### F4. Revenue (turnover)
 
-`Core` · rank 4 of 11 · score **4.15** · evidence **M** · from the first sheets
+`Core` · rank 4 of 13 · score **4.15** · evidence **M** · from the first sheets
 
 *Scores: decision 5, goal link 5, diagnostic 3, early warning 2, measurable 5.*
 
@@ -680,6 +729,8 @@ FROM monthly_cash;   -- if burn is zero or negative, runway is not defined: show
 - **Formula:** Sum of all fee income in the period, by fee type.
 - **Data needed:** A fee ledger with `date`, `fee_type`, `amount` and the sale it belongs to.
 - **Evidence (M):** £60.9m in 2023, £66.4m in 2024 and £78.3m in 2025 (up 18%), from filed accounts reported by trade press.
+- **Who uses it:** Finance, Executive Team.
+- **In a sentence (public figure):** "Revenue was £78.3m in 2025, up 18% on 2024."
 
 **Why it ranks here:** It defines scale and growth and is easy to measure. It is a lagging figure and says nothing about profit on its own.
 
@@ -720,9 +771,67 @@ FROM fees GROUP BY 1, 2;
 
 **Trap:** Say which date the chart uses. Seller fees only exist once the car is collected and paid for.
 
-### F5. Take rate
+### F5. Dealer net revenue retention
 
-`Core` · rank 5 of 11 · score **3.95** · evidence **S** · from the first sheets
+`Core` · rank 5 of 13 · score **4.00** · evidence **S** · adapted from the metrics cheatsheet
+
+*Scores: decision 4, goal link 5, diagnostic 4, early warning 3, measurable 3.*
+
+**Definition**
+- **What it is:** Whether the dealers you already had are worth more or less than a year ago.
+- **Formula:** Revenue this period from dealers who were active a year earlier ÷ revenue from those same dealers a year earlier. Above 100% means expansion beats churn and contraction.
+- **Data needed:** Dealer fee revenue by dealer and month, for at least 13 months.
+- **Evidence (S):** a16z lists dollar retention cohorts among its marketplace metrics, and net revenue retention is a core SaaS metric in the cheatsheet. Motorway does not publish it. Applying it to transaction fees and not subscriptions is my adaptation.
+- **Who uses it:** Finance, Commercial, Executive Team.
+- **In a sentence (sample numbers):** "Dealer net revenue retention is 106%, so existing dealers alone grew revenue by 6%."
+
+**Why it ranks here:** Dealers pay a fee on every car they buy, and keeping that revenue is cheaper than replacing it. It splits growth into lost dealers, dealers spending less and dealers spending more, which tells account managers where to act.
+
+**Insights it can give**
+- Above 100%: existing dealers alone grow revenue, before any recruitment.
+- Below 100% with a stable dealer count: dealers stay but buy less, a demand or supply-fit problem.
+- High because of a few dealers: read it with concentration.
+- **Read it with:** Dealer retention cohorts, concentration and average revenue per active dealer.
+- **Decision it supports:** Account management priorities, and how much recruitment is needed just to stand still.
+
+**How to show it**
+- **Format:** Single value + chart.
+- **Main visual:** V10 Waterfall chart. **Companion:** V1 Scorecard: one number with its change.
+- **Why:** A waterfall from last year's revenue through lost, shrinking and growing dealers to this year's revenue shows the three forces at once.
+- **Build notes:** Start at 100 (last year's revenue from the cohort). Bars: dealers lost, dealers spending less, dealers spending more. End bar: this year's revenue from the same dealers.
+
+| Platform | Main (V10) | Companion (V1) |
+|---|---|---|
+| Looker Studio | Waterfall chart | Scorecard with comparison |
+| Streamlit | `st.plotly_chart(go.Waterfall)` | `st.metric` (native) |
+| Python | `go.Waterfall(measure=[...])` | `go.Indicator` or a printed number |
+| SQL returns | one signed row per step, in order | one row: value and prior value |
+| Antigravity IDE | notebook cell (test inline first), or Streamlit in a browser | printed value or DataFrame in a cell |
+
+```sql
+WITH a AS (SELECT dealer_id, SUM(amount) AS rev FROM dealer_fees WHERE month BETWEEN :prev_start AND :prev_end GROUP BY 1),
+     b AS (SELECT dealer_id, SUM(amount) AS rev FROM dealer_fees WHERE month BETWEEN :cur_start AND :cur_end GROUP BY 1)
+SELECT SUM(COALESCE(b.rev, 0)) * 1.0 / SUM(a.rev) AS net_revenue_retention,
+       SUM(CASE WHEN b.rev IS NULL THEN a.rev ELSE 0 END) AS lost,
+       SUM(CASE WHEN b.rev < a.rev THEN a.rev - b.rev ELSE 0 END) AS contraction,
+       SUM(CASE WHEN b.rev > a.rev THEN b.rev - a.rev ELSE 0 END) AS expansion
+FROM a LEFT JOIN b USING (dealer_id);   -- starts from last year's dealers, so new dealers are excluded
+```
+
+**Drill:** Drill down by dealer size band and region. Drill through to the dealers that shrank most.
+
+**If the data is thin**
+
+| If you are missing | Use instead | What that still tells you | What you lose |
+|---|---|---|---|
+| 13 months of dealer revenue | A quarter-on-quarter version | A shorter-run read | Seasonality, which a year-on-year view removes |
+| Revenue by dealer | Purchases by dealer as a proxy | Whether dealers buy more or fewer cars | The effect of price and fee changes |
+
+**Trap:** New dealers must be excluded, or growth from recruitment hides churn.
+
+### F6. Take rate
+
+`Core` · rank 6 of 13 · score **3.95** · evidence **S** · from the first sheets
 
 *Scores: decision 4, goal link 4, diagnostic 4, early warning 3, measurable 5.*
 
@@ -731,6 +840,8 @@ FROM fees GROUP BY 1, 2;
 - **Formula:** Revenue ÷ GMV for the same period and the same sales.
 - **Data needed:** Revenue and GMV on the same date basis.
 - **Evidence (S):** a16z marketplace metric. From the public 2023 figures, £60.9m ÷ £2.2bn is about 2.8%. That is my own calculation. Motorway does not state a take rate.
+- **Who uses it:** Finance, Product.
+- **In a sentence (sample numbers):** "Take rate rose to 2.94%, just above the 2.9% target."
 
 **Why it ranks here:** It shows pricing power and mix in one number. It tells you whether revenue grows because more is sold or because more is kept per sale.
 
@@ -773,9 +884,9 @@ JOIN (SELECT DATE_TRUNC('month', completed_date) AS month, SUM(sale_price) AS gm
 
 **Trap:** A rising take rate may come from a mix shift to higher-fee cars, not a price change. Check the mix first.
 
-### F6. Average revenue per active dealer
+### F7. Average revenue per active dealer
 
-`Core` · rank 6 of 11 · score **3.85** · evidence **P** · added in round 2
+`Core` · rank 7 of 13 · score **3.85** · evidence **P** · added in round 2
 
 *Scores: decision 4, goal link 4, diagnostic 4, early warning 3, measurable 4.*
 
@@ -784,6 +895,8 @@ JOIN (SELECT DATE_TRUNC('month', completed_date) AS month, SUM(sale_price) AS gm
 - **Formula:** Dealer fee revenue in the period ÷ active dealers in the period. Listed peers divide by the average of opening and closing paying dealers.
 - **Data needed:** Dealer fee revenue by month, and the list of active dealers (bid or bought).
 - **Evidence (P):** Auto Trader reports average revenue per retailer (£2,854 a month in FY2025). CarGurus reports quarterly average revenue per subscribing dealer, defined as quarterly marketplace revenue ÷ the average of opening and closing paying dealers. For Motorway the figure is my inference.
+- **Who uses it:** Finance, Commercial.
+- **In a sentence (sample numbers):** "Average revenue per active dealer is £1,322 a month, but the median is only £616."
 
 **Why it ranks here:** It separates two growth stories: more dealers, or more revenue from each. Peers treat it as a headline KPI.
 
@@ -825,9 +938,63 @@ SELECT month, dealer_revenue * 1.0 / active_dealers AS arpd FROM rev JOIN act US
 
 **Trap:** Auto Trader notes that smaller customers dilute the average. Report the median beside the mean.
 
-### F7. Adjusted EBITDA
+### F8. Average sale price
 
-`Core` · rank 7 of 11 · score **3.65** · evidence **P** · from the first sheets
+`Supporting` · rank 8 of 13 · score **3.65** · evidence **G** · adapted from the metrics cheatsheet
+
+*Scores: decision 3, goal link 4, diagnostic 4, early warning 3, measurable 5.*
+
+**Definition**
+- **What it is:** The typical value of a car sold. It is the marketplace version of average order value.
+- **Formula:** GMV ÷ completed sales. Report the median beside the mean.
+- **Data needed:** `sale_price` on each completed sale, plus price band, make and age.
+- **Evidence (G):** Average order value is a standard retail metric in the cheatsheet. Motorway publishes neither an average sale price nor a count of cars sold for the same year as its GMV, so it cannot be worked out from public figures.
+- **Who uses it:** Finance, Commercial, Marketing.
+- **In a sentence (sample numbers):** "The median sale price is £9,400 against a mean of £11,200, so a few dear cars lift the average."
+
+**Why it ranks here:** It is the other half of GMV. It tells you whether growth came from more cars or dearer cars, and seller fees depend on the price band. It ranks mid-table because the business cannot steer it directly.
+
+**Insights it can give**
+- Mean up, median flat: a few dear cars, or more premium stock.
+- Both up across every band: market prices are rising. Check the guide price.
+- Down after a campaign: the campaign brought cheaper cars, which carry lower fees.
+- **Read it with:** GMV, take rate and the price-band mix.
+- **Decision it supports:** Which car segments to target in marketing and dealer recruitment.
+
+**How to show it**
+- **Format:** Chart.
+- **Main visual:** V3 Line chart against last year or last period. **Companion:** V6 100% stacked column chart (mix over time).
+- **Why:** Mean and median on one chart show whether a few dear cars are moving the average. The price-band mix beneath explains the move.
+- **Build notes:** Monthly mean and median lines. Companion: share of sales by price band.
+
+| Platform | Main (V3) | Companion (V6) |
+|---|---|---|
+| Looker Studio | Time series + comparison range | 100% stacked column or area |
+| Streamlit | `st.line_chart` (native) | shares in pandas, then `st.area_chart` |
+| Python | `px.line` with several y columns | `px.area(groupnorm='percent')` |
+| SQL returns | one row per period, one column per series | one row per period per segment, with its share |
+| Antigravity IDE | notebook cell (test inline first), or Streamlit in a browser | notebook cell (test inline first), or Streamlit in a browser |
+
+```sql
+SELECT DATE_TRUNC('month', completed_date) AS month, AVG(sale_price) AS mean_price,
+       PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY sale_price) AS median_price, COUNT(*) AS sales
+FROM completed_sales GROUP BY 1;
+```
+
+**Drill:** Drill down by price band, make, fuel type and age band.
+
+**If the data is thin**
+
+| If you are missing | Use instead | What that still tells you | What you lose |
+|---|---|---|---|
+| Price on every sale | Median of the sales that have a price, with the coverage stated | A typical value | Certainty, if the missing prices are not random |
+| Price band or make | One overall mean and median | The level | What moved it |
+
+**Trap:** A rising mean with a flat median means the top end moved. Do not read it as all cars getting dearer.
+
+### F9. Adjusted EBITDA
+
+`Supporting` · rank 9 of 13 · score **3.65** · evidence **P** · from the first sheets
 
 *Scores: decision 4, goal link 5, diagnostic 3, early warning 2, measurable 3.*
 
@@ -836,6 +1003,8 @@ SELECT month, dealer_revenue * 1.0 / active_dealers AS arpd FROM rev JOIN act US
 - **Formula:** Operating result + depreciation + amortisation, plus or minus one-off and share-based items.
 - **Data needed:** Quarterly operating result, depreciation, amortisation and a list of adjustments.
 - **Evidence (P):** ACV Auctions reports it as a key metric ($58.8m in FY2025). Motorway does not publish it.
+- **Who uses it:** Finance, Executive Team.
+- **In a sentence (sample numbers):** "Adjusted EBITDA turned positive in Q3 at £0.6m, after seven quarters of losses."
 
 **Why it ranks here:** It shows whether the core business is nearing break-even, free of financing and one-offs. It ranks mid-table because it is company-defined and lagging.
 
@@ -876,9 +1045,9 @@ FROM quarterly_accounts ORDER BY quarter;
 
 **Trap:** It is a company-defined measure. Always show what was added back.
 
-### F8. Operating costs as a share of revenue
+### F10. Operating costs as a share of revenue
 
-`Supporting` · rank 8 of 11 · score **3.50** · evidence **I** · added in round 2
+`Supporting` · rank 10 of 13 · score **3.50** · evidence **I** · added in round 2
 
 *Scores: decision 4, goal link 4, diagnostic 3, early warning 2, measurable 4.*
 
@@ -887,6 +1056,8 @@ FROM quarterly_accounts ORDER BY quarter;
 - **Formula:** Each cost line ÷ revenue, and total operating cost ÷ revenue.
 - **Data needed:** A monthly or quarterly cost ledger by category, and revenue.
 - **Evidence (I):** A standard financial ratio. Not published for Motorway.
+- **Who uses it:** Finance, Executive Team.
+- **In a sentence (sample numbers):** "Marketing fell from 52% to 48% of revenue this year, which is where the operating leverage came from."
 
 **Why it ranks here:** It shows operating leverage: whether costs grow slower than revenue. That is how a loss closes. It ranks lower than contribution because it mixes fixed and variable costs.
 
@@ -927,9 +1098,9 @@ GROUP BY c.quarter, c.category, r.revenue;
 
 **Trap:** Reclassified cost lines break comparisons over time. Note any change.
 
-### F9. Pre-tax loss
+### F11. Pre-tax loss
 
-`Supporting` · rank 9 of 11 · score **3.50** · evidence **M** · from the first sheets
+`Supporting` · rank 11 of 13 · score **3.50** · evidence **M** · from the first sheets
 
 *Scores: decision 4, goal link 5, diagnostic 2, early warning 1, measurable 5.*
 
@@ -938,6 +1109,8 @@ GROUP BY c.quarter, c.category, r.revenue;
 - **Formula:** Revenue − all operating costs − finance costs.
 - **Data needed:** Annual or quarterly accounts: revenue, cost lines, finance costs.
 - **Evidence (M):** £25.3m in 2025, down from £37.3m in 2024. Stated aim: profit by mid-2026. The cost split on the sample dashboard is invented.
+- **Who uses it:** Finance, Executive Team.
+- **In a sentence (public figure):** "The pre-tax loss narrowed to £25.3m in 2025 from £37.3m in 2024."
 
 **Why it ranks here:** It is the final verdict on the business model, but it is purely lagging and gives no clue why. Contribution per car and burn explain it.
 
@@ -976,9 +1149,9 @@ SELECT line, amount FROM annual_accounts WHERE year = 2025 ORDER BY display_orde
 
 **Trap:** Label estimates as estimates.
 
-### F10. Revenue per car sold
+### F12. Revenue per car sold
 
-`Supporting` · rank 10 of 11 · score **3.45** · evidence **P** · from the first sheets
+`Supporting` · rank 12 of 13 · score **3.45** · evidence **P** · from the first sheets
 
 *Scores: decision 3, goal link 4, diagnostic 3, early warning 3, measurable 5.*
 
@@ -987,6 +1160,8 @@ SELECT line, amount FROM annual_accounts WHERE year = 2025 ORDER BY display_orde
 - **Formula:** Revenue ÷ number of completed sales.
 - **Data needed:** Revenue by month and completed sales by month.
 - **Evidence (P):** Peers report a per-customer version: Auto Trader's average revenue per retailer.
+- **Who uses it:** Finance, Product.
+- **In a sentence (sample numbers):** "Revenue per car sold is £547, up from £512 a year ago."
 
 **Why it ranks here:** It is the revenue half of contribution per car. Useful, but on its own it ignores cost.
 
@@ -1027,9 +1202,9 @@ FROM completed_sales GROUP BY month;
 
 **Trap:** Seasonality. Compare with the same month last year.
 
-### F11. Share of sales paid through Motorway Pay
+### F13. Share of sales paid through Motorway Pay
 
-`Supporting` · rank 11 of 11 · score **3.20** · evidence **M** · from the first sheets
+`Supporting` · rank 13 of 13 · score **3.20** · evidence **M** · from the first sheets
 
 *Scores: decision 3, goal link 3, diagnostic 3, early warning 3, measurable 5.*
 
@@ -1038,6 +1213,8 @@ FROM completed_sales GROUP BY month;
 - **Formula:** Sales paid through Motorway Pay ÷ all completed sales.
 - **Data needed:** `payment_method` on each completed sale.
 - **Evidence (M):** Motorway states over 50% of transactions and 2,000+ dealers. Earlier points on the sample line are invented.
+- **Who uses it:** Finance, Product, Commercial.
+- **In a sentence (public figure):** "Over half of completed sales are now paid through Motorway Pay."
 
 **Why it ranks here:** It shows product adoption, but it is a means to an end. Rank is lowest because it does not change the profit decision.
 
@@ -1087,12 +1264,12 @@ FROM completed_sales GROUP BY 1;
 **Suggested page layout**
 - **Top row, single values:** Cost per car sold, Valuations started, CAC payback, Seller satisfaction (NPS or CSAT). Each with its change against the last period.
 - **Middle, the Headline charts:** Valuation-to-sale conversion (funnel chart); Cost per car sold (ranked horizontal bar chart); Valuations started (area chart).
-- **Lower, the Core diagnostics:** CAC payback, Seller satisfaction (NPS or CSAT), Organic share of valuations, Cost per valuation (cost per lead).
-- **Second page or drill through:** Review score, Seller price advantage, Visits and engagement, Brand awareness.
+- **Lower, the Core diagnostics:** CAC payback, Seller satisfaction (NPS or CSAT), Revenue per valuation, Organic share of valuations.
+- **Second page or drill through:** Cost per valuation (cost per lead), Review score, Seller price advantage, Visits and engagement, Brand awareness.
 
 ### M1. Valuation-to-sale conversion
 
-`Headline` · rank 1 of 11 · score **4.75** · evidence **S** · from the first sheets
+`Headline` · rank 1 of 12 · score **4.75** · evidence **S** · from the first sheets
 
 *Scores: decision 5, goal link 5, diagnostic 5, early warning 4, measurable 4.*
 
@@ -1101,6 +1278,8 @@ FROM completed_sales GROUP BY 1;
 - **Formula:** Completed sales ÷ valuations started, for the same group of sellers (allow time for recent sellers to finish).
 - **Data needed:** Valuation records with a timestamp or flag for each later step.
 - **Evidence (S):** a16z match rate: how often the two sides of a marketplace successfully connect.
+- **Who uses it:** Marketing, Product, Executive Team.
+- **In a sentence (sample numbers):** "28 of every 100 valuations end in a completed sale, and the biggest loss comes before the profile is finished."
 
 **Why it ranks here:** It is the yield of the whole seller funnel. A drop here points to the exact step that broke, so it is both an outcome and a diagnosis. It also drives cost per car sold.
 
@@ -1145,7 +1324,7 @@ FROM valuations WHERE is_test = FALSE GROUP BY 1;
 
 ### M2. Cost per car sold
 
-`Headline` · rank 2 of 11 · score **4.40** · evidence **S** · from the first sheets
+`Headline` · rank 2 of 12 · score **4.40** · evidence **S** · from the first sheets
 
 *Scores: decision 5, goal link 5, diagnostic 4, early warning 3, measurable 4.*
 
@@ -1154,6 +1333,8 @@ FROM valuations WHERE is_test = FALSE GROUP BY 1;
 - **Formula:** Marketing spend ÷ completed sales that came from those valuations.
 - **Data needed:** Spend by channel and period, and completed sales traced to the channel of origin.
 - **Evidence (S):** a16z unit economics. It is the honest test of a channel, more than cost per lead.
+- **Who uses it:** Marketing, Finance.
+- **In a sentence (sample numbers):** "Blended cost per car sold is £171, but paid social costs £236 against £96 for partners."
 
 **Why it ranks here:** It turns marketing spend into a business outcome. A channel with cheap leads can be the dearest per sale.
 
@@ -1198,7 +1379,7 @@ FROM sp LEFT JOIN sa USING (channel);   -- aggregate both sides first, then join
 
 ### M3. Valuations started
 
-`Headline` · rank 3 of 11 · score **4.05** · evidence **I** · from the first sheets
+`Headline` · rank 3 of 12 · score **4.05** · evidence **I** · from the first sheets
 
 *Scores: decision 4, goal link 4, diagnostic 3, early warning 5, measurable 5.*
 
@@ -1207,6 +1388,8 @@ FROM sp LEFT JOIN sa USING (channel);   -- aggregate both sides first, then join
 - **Formula:** Count of sellers who enter a registration and receive a valuation in the period, by channel.
 - **Data needed:** `valuation_id`, `created_at`, `channel`, `campaign`.
 - **Evidence (I):** Follows Motorway's published seller journey: registration, valuation, profile, daily sale.
+- **Who uses it:** Marketing, Operations.
+- **In a sentence (sample numbers):** "Valuations started rose 9% to 34,800 a week, all of it from paid social."
 
 **Why it ranks here:** It is the earliest signal in the business: a fall here shows up in sales days later. It ranks below conversion because volume without yield means little.
 
@@ -1249,7 +1432,7 @@ FROM valuations WHERE is_test = FALSE GROUP BY 1, 2;
 
 ### M4. CAC payback
 
-`Core` · rank 4 of 11 · score **4.00** · evidence **S** · added in round 2
+`Core` · rank 4 of 12 · score **4.00** · evidence **S** · added in round 2
 
 *Scores: decision 5, goal link 5, diagnostic 3, early warning 3, measurable 2.*
 
@@ -1258,6 +1441,8 @@ FROM valuations WHERE is_test = FALSE GROUP BY 1, 2;
 - **Formula:** Seller version: cost per car sold ÷ contribution per car (below 1 means the first sale repays the cost). Dealer version: dealer acquisition cost ÷ monthly contribution per active dealer, in months.
 - **Data needed:** Spend by channel, contribution per car, dealer cohorts and their activity.
 - **Evidence (S):** Unit-economics practice. Inovia defines CAC payback as the months needed to recover acquisition cost. One investor rule of thumb (net contribution about three times acquisition cost after 18 months) is one person's view, not a standard. Applying it to one-off sellers and repeat dealers is my adaptation.
+- **Who uses it:** Marketing, Finance.
+- **In a sentence (sample numbers):** "Paid social has a payback ratio of 1.09, so a sale there costs more than it contributes."
 
 **Why it ranks here:** It links marketing to profit directly. It ranks below conversion and cost per sale because it needs the hardest data: contribution per car and cohort tracking.
 
@@ -1300,7 +1485,7 @@ FROM channel_unit_economics;   -- a view built from the cost-per-sale and contri
 
 ### M5. Seller satisfaction (NPS or CSAT)
 
-`Core` · rank 5 of 11 · score **3.90** · evidence **S** · added in round 2
+`Core` · rank 5 of 12 · score **3.90** · evidence **S** · added in round 2
 
 *Scores: decision 4, goal link 4, diagnostic 4, early warning 4, measurable 3.*
 
@@ -1309,6 +1494,8 @@ FROM channel_unit_economics;   -- a view built from the cost-per-sale and contri
 - **Formula:** NPS = % promoters (9 or 10) − % detractors (0 to 6) on a 0 to 10 'would you recommend' question. CSAT = % answering satisfied or very satisfied.
 - **Data needed:** Post-sale survey responses with seller, date, score and, if possible, channel.
 - **Evidence (S):** Marketplace guidance advises tracking buyer and seller NPS separately. OPENLANE reports a per-transaction satisfaction score (8.3 out of 10, company self-report). Aggregator NPS pages for auction firms disagree with each other and are not used.
+- **Who uses it:** Marketing, Product, Operations.
+- **In a sentence (sample numbers):** "Seller NPS fell from 46 to 38 in six months as detractors grew from 12% to 18%."
 
 **Why it ranks here:** Satisfaction moves before reviews and repeat behaviour do, so it is a leading indicator of both brand and retention.
 
@@ -1350,9 +1537,64 @@ FROM seller_survey GROUP BY 1;
 
 **Trap:** Survey bias: sellers who finished the sale answer differently from those who did not.
 
-### M6. Organic share of valuations
+### M6. Revenue per valuation
 
-`Core` · rank 6 of 11 · score **3.80** · evidence **S** · added in round 2
+`Core` · rank 6 of 12 · score **3.90** · evidence **G** · adapted from the metrics cheatsheet
+
+*Scores: decision 4, goal link 5, diagnostic 3, early warning 3, measurable 4.*
+
+**Definition**
+- **What it is:** How much revenue one started valuation is worth. It is the marketplace version of revenue per visitor.
+- **Formula:** Revenue from completed sales ÷ valuations started, for the same cohort. It equals conversion × revenue per car sold.
+- **Data needed:** Valuations with channel and cohort week, and the revenue of the sales they led to.
+- **Evidence (G):** Revenue per visitor is a standard retail metric in the cheatsheet. Using valuations as the denominator is my adaptation. Motorway does not publish it.
+- **Who uses it:** Marketing, Finance.
+- **In a sentence (sample numbers):** "A partner valuation is worth £191 in revenue against £82 for paid social."
+
+**Why it ranks here:** It puts lead quality in pounds, so it compares directly with cost per valuation. A channel is worth buying when revenue per valuation sits well above cost per valuation.
+
+**Insights it can give**
+- Low cost per lead and low revenue per valuation: the channel is cheap for a reason.
+- Falling while conversion holds: cheaper cars are coming in, so fees per sale are lower.
+- Well above cost per valuation: room to spend more there.
+- **Read it with:** Cost per valuation and conversion.
+- **Decision it supports:** Bid and budget limits for each channel.
+
+**How to show it**
+- **Format:** Single value + chart.
+- **Main visual:** V8 Ranked horizontal bar chart. **Companion:** V1 Scorecard: one number with its change.
+- **Why:** Channels compare by length. Put cost per valuation beside it and the margin per lead is visible.
+- **Build notes:** Bars by channel, sorted, with a blended bar for reference.
+
+| Platform | Main (V8) | Companion (V1) |
+|---|---|---|
+| Looker Studio | Bar chart, sorted, with reference line | Scorecard with comparison |
+| Streamlit | `st.bar_chart(horizontal=True)`, Plotly for a threshold | `st.metric` (native) |
+| Python | `px.bar(orientation='h')` + `add_vline` | `go.Indicator` or a printed number |
+| SQL returns | one row per item, sorted, with its denominator | one row: value and prior value |
+| Antigravity IDE | notebook cell (test inline first), or Streamlit in a browser | printed value or DataFrame in a cell |
+
+```sql
+SELECT v.channel, COUNT(*) AS valuations, SUM(COALESCE(s.revenue, 0)) AS revenue,
+       SUM(COALESCE(s.revenue, 0)) * 1.0 / COUNT(*) AS revenue_per_valuation
+FROM valuations v LEFT JOIN completed_sales s ON s.valuation_id = v.valuation_id   -- at most one sale per valuation
+WHERE v.is_test = FALSE AND v.created_at < :maturity_cutoff GROUP BY v.channel;
+```
+
+**Drill:** Drill down channel, then campaign.
+
+**If the data is thin**
+
+| If you are missing | Use instead | What that still tells you | What you lose |
+|---|---|---|---|
+| Revenue per sale | Conversion × average revenue per car | A close estimate | Differences in car value between channels |
+| Mature cohorts | Profile completion rate × the historic value of a finished profile | An early read | Accuracy |
+
+**Trap:** Use mature cohorts. Recent valuations have not sold yet, so their revenue is understated.
+
+### M7. Organic share of valuations
+
+`Core` · rank 7 of 12 · score **3.80** · evidence **S** · added in round 2
 
 *Scores: decision 4, goal link 4, diagnostic 3, early warning 4, measurable 4.*
 
@@ -1361,6 +1603,8 @@ FROM seller_survey GROUP BY 1;
 - **Formula:** Valuations from unpaid sources (direct, organic search, referral) ÷ all valuations.
 - **Data needed:** `channel` or source on every valuation, with paid and unpaid defined once.
 - **Evidence (S):** a16z unit economics: watch whether acquisition cost falls and the organic share of users grows.
+- **Who uses it:** Marketing, Executive Team.
+- **In a sentence (sample numbers):** "The unpaid share of valuations slipped from 48% to 44% as paid social scaled."
 
 **Why it ranks here:** A rising organic share means growth is cheaper and a brand effect is working. A falling one means dependence on paid spend.
 
@@ -1402,9 +1646,9 @@ FROM valuations WHERE is_test = FALSE GROUP BY 1;
 
 **Trap:** Attribution: a seller who saw a paid ad and later came direct is counted as organic.
 
-### M7. Cost per valuation (cost per lead)
+### M8. Cost per valuation (cost per lead)
 
-`Core` · rank 7 of 11 · score **3.35** · evidence **I** · from the first sheets
+`Supporting` · rank 8 of 12 · score **3.35** · evidence **I** · from the first sheets
 
 *Scores: decision 3, goal link 3, diagnostic 3, early warning 4, measurable 5.*
 
@@ -1413,6 +1657,8 @@ FROM valuations WHERE is_test = FALSE GROUP BY 1;
 - **Formula:** Marketing spend ÷ valuations started, per channel and week.
 - **Data needed:** Spend by channel and week, and valuations by channel and week.
 - **Evidence (I):** A standard marketing measure. Not published by Motorway.
+- **Who uses it:** Marketing.
+- **In a sentence (sample numbers):** "Cost per valuation on paid social jumped from £7.50 to £11.40 after the September campaign."
 
 **Why it ranks here:** It reacts first when a campaign changes, so it is a good early warning. It is the most misleading metric when read alone, because cheap leads are not good leads.
 
@@ -1454,9 +1700,9 @@ SELECT sp.week, sp.channel, sp.spend * 1.0 / v.valuations AS cost_per_valuation 
 
 **Trap:** Always show next to cost per car sold.
 
-### M8. Review score
+### M9. Review score
 
-`Supporting` · rank 8 of 11 · score **2.70** · evidence **M** · from the first sheets
+`Supporting` · rank 9 of 12 · score **2.70** · evidence **M** · from the first sheets
 
 *Scores: decision 2, goal link 3, diagnostic 2, early warning 3, measurable 5.*
 
@@ -1465,6 +1711,8 @@ SELECT sp.week, sp.channel, sp.spend * 1.0 / v.valuations AS cost_per_valuation 
 - **Formula:** Average star rating across verified reviews.
 - **Data needed:** Review ratings with dates, from an external review site.
 - **Evidence (M):** Trustpilot shows about 4.4 to 4.5 out of 5 from over 100,000 reviews.
+- **Who uses it:** Marketing, Operations.
+- **In a sentence (public figure):** "The review score is about 4.5 out of 5, from over 100,000 reviews."
 
 **Why it ranks here:** It is public proof of trust but it moves slowly and rarely drives a decision.
 
@@ -1504,9 +1752,9 @@ SELECT stars, COUNT(*) AS reviews FROM reviews GROUP BY stars;   -- average: SEL
 
 **Trap:** An average of many 5s and some 1s differs from all 4s.
 
-### M9. Seller price advantage
+### M10. Seller price advantage
 
-`Supporting` · rank 9 of 11 · score **2.65** · evidence **M** · from the first sheets
+`Supporting` · rank 10 of 12 · score **2.65** · evidence **M** · from the first sheets
 
 *Scores: decision 3, goal link 3, diagnostic 2, early warning 2, measurable 3.*
 
@@ -1515,6 +1763,8 @@ SELECT stars, COUNT(*) AS reviews FROM reviews GROUP BY stars;   -- average: SEL
 - **Formula:** Share of sales above an independent market price guide, and the average £ gained against part exchange (customer survey).
 - **Data needed:** `sale_price` and `guide_price` for each sale. The part exchange comparison comes from a survey.
 - **Evidence (M):** Motorway claims 84% of sellers beat the market price and £1,600 more than part exchange. Self-reported.
+- **Who uses it:** Marketing, Commercial.
+- **In a sentence (public figure):** "Motorway says 84% of sellers beat the market price."
 
 **Why it ranks here:** It supports marketing claims but it is not an operational control. Rank is low because nothing changes if it moves a point.
 
@@ -1555,9 +1805,9 @@ FROM completed_sales WHERE guide_price IS NOT NULL;
 
 **Trap:** A company's own claim is evidence of what it says, not an audit.
 
-### M10. Visits and engagement
+### M11. Visits and engagement
 
-`Supporting` · rank 10 of 11 · score **2.55** · evidence **P** · from the first sheets
+`Supporting` · rank 11 of 12 · score **2.55** · evidence **P** · from the first sheets
 
 *Scores: decision 2, goal link 2, diagnostic 3, early warning 3, measurable 4.*
 
@@ -1566,6 +1816,8 @@ FROM completed_sales WHERE guide_price IS NOT NULL;
 - **Formula:** Monthly average visits across web and app, and minutes per visit.
 - **Data needed:** Web and app analytics by day: `visits`, `engaged_minutes`, `source`.
 - **Evidence (P):** Auto Trader reports cross-platform visits (81.6m a month) and minutes as KPIs.
+- **Who uses it:** Marketing, Product.
+- **In a sentence (sample numbers):** "Visits rose to 4.6m a month, while minutes per visit dipped to 4.4."
 
 **Why it ranks here:** Traffic is an input to the funnel but not an outcome. It matters more to a listings site than to Motorway.
 
@@ -1606,9 +1858,9 @@ FROM web_app_daily GROUP BY 1;
 
 **Trap:** Web and app visitors overlap. Do not add them together as people.
 
-### M11. Brand awareness
+### M12. Brand awareness
 
-`Supporting` · rank 11 of 11 · score **2.55** · evidence **M** · from the first sheets
+`Supporting` · rank 12 of 12 · score **2.55** · evidence **M** · from the first sheets
 
 *Scores: decision 3, goal link 3, diagnostic 2, early warning 2, measurable 2.*
 
@@ -1617,6 +1869,8 @@ FROM web_app_daily GROUP BY 1;
 - **Formula:** Survey: share of UK car owners who recognise the brand with prompting, and who name it without prompting.
 - **Data needed:** Survey results by quarter with the sample size.
 - **Evidence (M):** Motorway's TV campaigns name awareness as the aim. No figure is published, so the sample line is invented.
+- **Who uses it:** Marketing, Executive Team.
+- **In a sentence (sample numbers):** "Unprompted awareness rose from 28% to 32% after the spring TV campaign."
 
 **Why it ranks here:** Strategic but slow, noisy and hard to attribute. Rank is lowest because it cannot guide weekly decisions.
 
@@ -1667,11 +1921,11 @@ FROM brand_survey GROUP BY quarter;
 - **Top row, single values:** Completion rate (and fall-through), Price changed at collection, Time to sell, Completed sales. Each with its change against the last period.
 - **Middle, the Headline charts:** Completion rate (and fall-through) (line chart with a target line or band); Claims (arbitration) rate by dealer (ranked horizontal bar chart); Price changed at collection (ranked horizontal bar chart).
 - **Lower, the Core diagnostics:** Support contacts per 100 completed sales, Time to sell, Completed sales, Days to seller payment.
-- **Second page or drill through:** On-time collection and cost per move, Problem vehicles stopped, Seller verification coverage.
+- **Second page or drill through:** On-time collection and cost per move, Claim cost and resolution time, Problem vehicles stopped, Seller verification coverage.
 
 ### O1. Completion rate (and fall-through)
 
-`Headline` · rank 1 of 10 · score **4.55** · evidence **P** · from the first sheets
+`Headline` · rank 1 of 11 · score **4.55** · evidence **P** · from the first sheets
 
 *Scores: decision 5, goal link 5, diagnostic 4, early warning 4, measurable 4.*
 
@@ -1680,6 +1934,8 @@ FROM brand_survey GROUP BY quarter;
 - **Formula:** Completed sales ÷ offers accepted. Fall-through rate = 1 − completion rate.
 - **Data needed:** One row per accepted offer with its final outcome and the date accepted.
 - **Evidence (P):** ACV counts a unit once sold even if later unwound, so reversals are tracked separately.
+- **Who uses it:** Operations, Commercial, Executive Team.
+- **In a sentence (sample numbers):** "Completion rate fell to 91.9%, below the 93% floor, for the third week running."
 
 **Why it ranks here:** Every fall-through wastes dealer, seller and logistics effort, and revenue is earned only on completion. It is the quality control of the whole post-sale process and it points to causes.
 
@@ -1724,7 +1980,7 @@ FROM offers GROUP BY 1;
 
 ### O2. Claims (arbitration) rate by dealer
 
-`Headline` · rank 2 of 10 · score **4.20** · evidence **P** · from the first sheets
+`Headline` · rank 2 of 11 · score **4.20** · evidence **P** · from the first sheets
 
 *Scores: decision 5, goal link 4, diagnostic 4, early warning 4, measurable 3.*
 
@@ -1733,6 +1989,8 @@ FROM offers GROUP BY 1;
 - **Formula:** Claims opened ÷ vehicles purchased, per dealer, per month.
 - **Data needed:** `claim_id`, `dealer_id`, and purchases per dealer.
 - **Evidence (P):** ACV Auctions defines the arbitration rate this way in its programme terms. The 25% review threshold on the sample dashboard mirrors an ACV term.
+- **Who uses it:** Operations, Commercial.
+- **In a sentence (sample numbers):** "One dealer has a claims rate of 27%, above the 25% review line."
 
 **Why it ranks here:** It protects the trust of both sides and points to specific dealers to act on, so it converts directly into decisions.
 
@@ -1777,7 +2035,7 @@ FROM p LEFT JOIN c USING (dealer_id) WHERE p.purchases >= 20 ORDER BY claims_pct
 
 ### O3. Price changed at collection
 
-`Headline` · rank 3 of 10 · score **4.20** · evidence **I** · from the first sheets
+`Headline` · rank 3 of 11 · score **4.20** · evidence **I** · from the first sheets
 
 *Scores: decision 4, goal link 4, diagnostic 5, early warning 4, measurable 4.*
 
@@ -1786,6 +2044,8 @@ FROM p LEFT JOIN c USING (dealer_id) WHERE p.purchases >= 20 ORDER BY claims_pct
 - **Formula:** Sales where the price was adjusted after the dealer's inspection ÷ collections.
 - **Data needed:** `price_at_listing`, `price_at_collection`, `adjustment_reason`.
 - **Evidence (I):** Motorway says the dealer checks that the car matches its profile at collection. The KPI is inferred.
+- **Who uses it:** Operations, Product.
+- **In a sentence (sample numbers):** "7.1% of collections had a price change, and undisclosed damage caused 3.1 points of that."
 
 **Why it ranks here:** It is the root cause behind fall-through, claims and distrust. Reasons tell product and operations exactly what to fix, so it is highly diagnostic.
 
@@ -1828,7 +2088,7 @@ FROM collections WHERE price_at_collection <> price_at_listing GROUP BY 1 ORDER 
 
 ### O4. Support contacts per 100 completed sales
 
-`Core` · rank 4 of 10 · score **4.15** · evidence **I** · added in round 2
+`Core` · rank 4 of 11 · score **4.15** · evidence **I** · added in round 2
 
 *Scores: decision 4, goal link 4, diagnostic 4, early warning 5, measurable 4.*
 
@@ -1837,6 +2097,8 @@ FROM collections WHERE price_at_collection <> price_at_listing GROUP BY 1 ORDER 
 - **Formula:** Support conversations ÷ completed sales × 100, split by reason.
 - **Data needed:** Support tickets with date, reason tag and, if possible, the sale they relate to.
 - **Evidence (I):** Standard e-commerce operations practice. Published benchmarks conflict because sources count tickets and contacts differently, so no benchmark is used.
+- **Who uses it:** Operations, Product.
+- **In a sentence (sample numbers):** "Support contacts rose from 8 to 12 per 100 sales in eight weeks, driven by payment queries."
 
 **Why it ranks here:** It is the earliest alarm in operations. A rising contact rate shows up before reviews, claims or churn move.
 
@@ -1880,7 +2142,7 @@ SELECT t.week, t.reason, 100.0 * t.contacts / s.sales AS contacts_per_100_sales 
 
 ### O5. Time to sell
 
-`Core` · rank 5 of 10 · score **4.00** · evidence **S** · from the first sheets
+`Core` · rank 5 of 11 · score **4.00** · evidence **S** · from the first sheets
 
 *Scores: decision 4, goal link 4, diagnostic 4, early warning 4, measurable 4.*
 
@@ -1889,6 +2151,8 @@ SELECT t.week, t.reason, 100.0 * t.contacts / s.sales AS contacts_per_100_sales 
 - **Formula:** Days from profile complete to offer accepted, and from offer accepted to collection and payment.
 - **Data needed:** A timestamp for each step.
 - **Evidence (S):** a16z time to match. Seller reviews mention 2 to 8 days end to end (anecdotal).
+- **Who uses it:** Operations, Product.
+- **In a sentence (sample numbers):** "The median time to sell is 4.6 days, but 15% of cars miss the 8-day service level."
 
 **Why it ranks here:** Speed is the product promise to the seller. A long tail shows where sellers wait.
 
@@ -1931,7 +2195,7 @@ FROM offers GROUP BY 1 ORDER BY 1;   -- median: PERCENTILE_CONT(0.5) WITHIN GROU
 
 ### O6. Completed sales
 
-`Core` · rank 6 of 10 · score **4.00** · evidence **I** · from the first sheets
+`Core` · rank 6 of 11 · score **4.00** · evidence **I** · from the first sheets
 
 *Scores: decision 4, goal link 5, diagnostic 3, early warning 3, measurable 5.*
 
@@ -1940,6 +2204,8 @@ FROM offers GROUP BY 1 ORDER BY 1;   -- median: PERCENTILE_CONT(0.5) WITHIN GROU
 - **Formula:** Count of sales with status completed in the period.
 - **Data needed:** `sale_id`, `status`, `completed_date`, `region`.
 - **Evidence (I):** Motorway charges its seller fee only once a car is sold, collected and paid for.
+- **Who uses it:** Operations, Finance.
+- **In a sentence (sample numbers):** "We completed 2,610 sales last week, 4% above the 2,500 target."
 
 **Why it ranks here:** It is the unit of revenue. It ranks below rates because a count mostly follows demand and calendar days.
 
@@ -1981,7 +2247,7 @@ SELECT DATE_TRUNC('week', completed_date) AS week, COUNT(*) AS completed_sales F
 
 ### O7. Days to seller payment
 
-`Core` · rank 7 of 10 · score **3.80** · evidence **I** · added in round 2
+`Core` · rank 7 of 11 · score **3.80** · evidence **I** · added in round 2
 
 *Scores: decision 4, goal link 4, diagnostic 3, early warning 4, measurable 4.*
 
@@ -1990,6 +2256,8 @@ SELECT DATE_TRUNC('week', completed_date) AS week, COUNT(*) AS completed_sales F
 - **Formula:** Median time from collection to payment received by the seller, and the share paid within a set time.
 - **Data needed:** `collected_at` and `paid_at` on each completed sale.
 - **Evidence (I):** Not published for Motorway. Payment speed is a stated part of the service, but I did not find a figure.
+- **Who uses it:** Operations, Finance.
+- **In a sentence (sample numbers):** "The median time from collection to seller payment is 6 hours, and 96% are paid within 24 hours."
 
 **Why it ranks here:** Fast payment is a main reason to sell this way. A slowing median hurts trust before it shows in reviews.
 
@@ -2033,7 +2301,7 @@ FROM completed_sales;
 
 ### O8. On-time collection and cost per move
 
-`Supporting` · rank 8 of 10 · score **3.75** · evidence **I** · from the first sheets
+`Supporting` · rank 8 of 11 · score **3.75** · evidence **I** · from the first sheets
 
 *Scores: decision 4, goal link 3, diagnostic 4, early warning 4, measurable 4.*
 
@@ -2042,6 +2310,8 @@ FROM completed_sales;
 - **Formula:** Collections made in the agreed slot ÷ all collections, and transport cost ÷ moves.
 - **Data needed:** `slot_start`, `slot_end`, `actual_collection_time`, `transport_cost`, `region`.
 - **Evidence (I):** Motorway Move launched in 2024 (dealer transport from about £89 to £99). The KPI is inferred.
+- **Who uses it:** Operations, Finance.
+- **In a sentence (sample numbers):** "On-time collection is 84% in Scotland against 95% in London, at a 50% higher cost per move."
 
 **Why it ranks here:** Late collections create fall-through and complaints, and cost per move drives contribution.
 
@@ -2083,9 +2353,63 @@ FROM collections GROUP BY region;
 
 **Trap:** Read the two measures together.
 
-### O9. Problem vehicles stopped
+### O9. Claim cost and resolution time
 
-`Supporting` · rank 9 of 10 · score **3.70** · evidence **I** · from the first sheets
+`Supporting` · rank 9 of 11 · score **3.75** · evidence **G** · adapted from the metrics cheatsheet
+
+*Scores: decision 4, goal link 4, diagnostic 4, early warning 3, measurable 3.*
+
+**Definition**
+- **What it is:** How much a dispute costs when it happens, and how long it stays open.
+- **Formula:** Average cost per claim (refunds, goodwill, price adjustments), and median days from claim opened to closed.
+- **Data needed:** `claim_id`, `opened_at`, `closed_at`, `cost`, `reason`.
+- **Evidence (G):** Insurers track claims frequency and severity as a pair, and claims processing time is a standard operations metric in the cheatsheet. Applying them to dealer disputes is my adaptation. Motorway publishes neither.
+- **Who uses it:** Operations, Finance.
+- **In a sentence (sample numbers):** "The average claim costs £310 and takes a median of 6 days to close."
+
+**Why it ranks here:** Claims rate says how often. This says how much and how slowly. Total dispute cost is frequency × severity, so a falling rate can hide a rising bill.
+
+**Insights it can give**
+- Rate falling but cost per claim rising: fewer, larger disputes. The total bill may not have fallen.
+- Long resolution on one reason: a process gap, such as waiting for evidence.
+- Cost concentrated in a few claims: review those cases, not the average.
+- **Read it with:** Claims rate by dealer and price changed at collection.
+- **Decision it supports:** Dispute policy, and where to add evidence at listing.
+
+**How to show it**
+- **Format:** Single value + chart.
+- **Main visual:** V8 Ranked horizontal bar chart. **Companion:** V1 Scorecard: one number with its change.
+- **Why:** Average cost by reason shows where the money goes. Resolution time is one number against a service level.
+- **Build notes:** Bars: average cost per claim by reason, with the number of claims printed. Scorecard: median days to close.
+
+| Platform | Main (V8) | Companion (V1) |
+|---|---|---|
+| Looker Studio | Bar chart, sorted, with reference line | Scorecard with comparison |
+| Streamlit | `st.bar_chart(horizontal=True)`, Plotly for a threshold | `st.metric` (native) |
+| Python | `px.bar(orientation='h')` + `add_vline` | `go.Indicator` or a printed number |
+| SQL returns | one row per item, sorted, with its denominator | one row: value and prior value |
+| Antigravity IDE | notebook cell (test inline first), or Streamlit in a browser | printed value or DataFrame in a cell |
+
+```sql
+SELECT reason, COUNT(*) AS claims, AVG(cost) AS avg_cost,
+       PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM (closed_at - opened_at)) / 86400) AS median_days
+FROM claims WHERE closed_at IS NOT NULL GROUP BY reason ORDER BY avg_cost DESC;
+```
+
+**Drill:** Drill down by reason, then dealer. Drill through to open claims older than the service level.
+
+**If the data is thin**
+
+| If you are missing | Use instead | What that still tells you | What you lose |
+|---|---|---|---|
+| Cost per claim | Share of claims upheld | How often the dealer was right | The money |
+| Close dates | Count and age of open claims | The backlog | Speed for finished claims |
+
+**Trap:** Open claims are missing from the average. Report their count and age beside it.
+
+### O10. Problem vehicles stopped
+
+`Supporting` · rank 10 of 11 · score **3.70** · evidence **I** · from the first sheets
 
 *Scores: decision 4, goal link 4, diagnostic 3, early warning 4, measurable 3.*
 
@@ -2094,6 +2418,8 @@ FROM collections GROUP BY region;
 - **Formula:** Listings stopped for stolen, clocked, cloned or outstanding-finance flags ÷ listings checked.
 - **Data needed:** `flag_type` for each stopped listing, and the count of listings checked.
 - **Evidence (I):** Motorway announced protections against clocked and cloned cars. No figure is published.
+- **Who uses it:** Operations, Risk.
+- **In a sentence (sample numbers):** "We stopped 346 problem listings in September, 73% of them for outstanding finance."
 
 **Why it ranks here:** It guards the platform's reputation and shows risk trends. It ranks lower because a high count may mean better detection.
 
@@ -2133,9 +2459,9 @@ SELECT DATE_TRUNC('month', stopped_at) AS month, flag_type, COUNT(*) AS stopped 
 
 **Trap:** More stops can mean better detection, not more fraud. Say which reading you believe and why.
 
-### O10. Seller verification coverage
+### O11. Seller verification coverage
 
-`Supporting` · rank 10 of 10 · score **3.00** · evidence **M** · from the first sheets
+`Supporting` · rank 11 of 11 · score **3.00** · evidence **M** · from the first sheets
 
 *Scores: decision 3, goal link 3, diagnostic 2, early warning 3, measurable 5.*
 
@@ -2144,6 +2470,8 @@ SELECT DATE_TRUNC('month', stopped_at) AS month, flag_type, COUNT(*) AS stopped 
 - **Formula:** Sales with automated ID and document checks ÷ all sales.
 - **Data needed:** `verification_status` on each sale.
 - **Evidence (M):** Motorway's target was more than 95% of sales by the end of Q1 2026. Earlier points on the sample line are invented.
+- **Who uses it:** Operations, Product, Risk.
+- **In a sentence (sample numbers):** "Automated verification now covers 96% of sales, above the 95% target."
 
 **Why it ranks here:** Important for fraud, but once it reaches the target it becomes a monitoring figure.
 
@@ -2195,11 +2523,11 @@ FROM completed_sales GROUP BY 1;
 - **Top row, single values:** Sell-through, Active dealers, Bid volume and bids per car, Cumulative sell-through curve. Each with its change against the last period.
 - **Middle, the Headline charts:** Sell-through (line chart with a target line or band); Active dealers (column chart); Bid volume and bids per car (combo chart with two axes (columns plus a line)).
 - **Lower, the Core diagnostics:** Cumulative sell-through curve, Time to first bid, Sale price against market guide, Market depth: bidders per car.
-- **Second page or drill through:** Dealer concentration and retention, Cars in the daily sale, Motorway Pay adoption (dealers), Verified dealers.
+- **Second page or drill through:** Dealer concentration and retention, Dealer lifetime value and LTV to CAC, Cars in the daily sale, Motorway Pay adoption (dealers), Verified dealers.
 
 ### C1. Sell-through
 
-`Headline` · rank 1 of 11 · score **4.75** · evidence **S** · from the first sheets
+`Headline` · rank 1 of 12 · score **4.75** · evidence **S** · from the first sheets
 
 *Scores: decision 5, goal link 5, diagnostic 5, early warning 4, measurable 4.*
 
@@ -2208,6 +2536,8 @@ FROM completed_sales GROUP BY 1;
 - **Formula:** Cars sold ÷ cars entered into the sale.
 - **Data needed:** One row per listing with its outcome.
 - **Evidence (S):** a16z match rate. Motorway does not publish it. ACV Auctions reports Marketplace Units and OPENLANE reports vehicles offered and sold, but I could not read a stated conversion formula for either.
+- **Who uses it:** Commercial, Executive Team, Operations.
+- **In a sentence (sample numbers):** "Sell-through fell to 67.1%, two points below the 69% target."
 
 **Why it ranks here:** This is marketplace liquidity itself. It is the point where seller, dealer and price meet, and a fall can be traced to a slice, so it is both an outcome and a diagnostic.
 
@@ -2253,7 +2583,7 @@ FROM daily_sale_entries GROUP BY 1;
 
 ### C2. Active dealers
 
-`Headline` · rank 2 of 11 · score **4.65** · evidence **P** · from the first sheets
+`Headline` · rank 2 of 12 · score **4.65** · evidence **P** · from the first sheets
 
 *Scores: decision 5, goal link 5, diagnostic 4, early warning 4, measurable 5.*
 
@@ -2262,6 +2592,8 @@ FROM daily_sale_entries GROUP BY 1;
 - **Formula:** Dealers who bid on or bought at least one car in the period.
 - **Data needed:** Bids and purchases with `dealer_id` and date.
 - **Evidence (P):** ACV Auctions reports Marketplace Buyers (22,062 in FY2025).
+- **Who uses it:** Commercial, Executive Team.
+- **In a sentence (sample numbers):** "4,490 of 8,010 verified dealers were active in September, a ratio of 56%."
 
 **Why it ranks here:** Demand depends on participating dealers, not registered ones. The gap between verified and active is a main growth lever.
 
@@ -2304,7 +2636,7 @@ FROM dealer_activity WHERE action IN ('bid', 'purchase') GROUP BY 1;
 
 ### C3. Bid volume and bids per car
 
-`Headline` · rank 3 of 11 · score **4.55** · evidence **M** · from the first sheets
+`Headline` · rank 3 of 12 · score **4.55** · evidence **M** · from the first sheets
 
 *Scores: decision 5, goal link 4, diagnostic 4, early warning 5, measurable 5.*
 
@@ -2313,6 +2645,8 @@ FROM dealer_activity WHERE action IN ('bid', 'purchase') GROUP BY 1;
 - **Formula:** Total bids in the period, and bids ÷ cars in the daily sale.
 - **Data needed:** One row per bid, and the count of cars offered.
 - **Evidence (M):** Motorway reports bid volumes up about 20% in 2025, and EVs drew 29% more bids than the average car.
+- **Who uses it:** Commercial, Product.
+- **In a sentence (sample numbers):** "Total bids are up 23%, but bids per car fell from 5.7 to 5.2."
 
 **Why it ranks here:** Bids lead sales. A fall in bids per car warns of a sell-through fall before it happens.
 
@@ -2356,7 +2690,7 @@ SELECT week, bids, cars, bids * 1.0 / cars AS bids_per_car FROM b JOIN c USING (
 
 ### C4. Cumulative sell-through curve
 
-`Core` · rank 4 of 11 · score **4.20** · evidence **S** · added in round 2
+`Core` · rank 4 of 12 · score **4.20** · evidence **S** · added in round 2
 
 *Scores: decision 4, goal link 5, diagnostic 5, early warning 3, measurable 3.*
 
@@ -2365,6 +2699,8 @@ SELECT week, bids, cars, bids * 1.0 / cars AS bids_per_car FROM b JOIN c USING (
 - **Formula:** For each weekly cohort of newly listed cars, the share sold within 1, 2, 3 … days (or by first, second, third attempt).
 - **Data needed:** `first_listed_at`, `sold_at`, and optionally `attempt_no`.
 - **Evidence (S):** a16z describes the share of inventory that clears over time as a curve, called inventory turnover for product marketplaces.
+- **Who uses it:** Commercial, Operations.
+- **In a sentence (sample numbers):** "72% of July's cars sold within 14 days, against 67% for September's."
 
 **Why it ranks here:** A single sell-through rate hides speed. A curve shows both the speed and the final level, and comparing cohorts shows whether a change helped.
 
@@ -2408,7 +2744,7 @@ FROM listings CROSS JOIN generate_series(0, 14) AS d GROUP BY 1, 2;   -- Postgre
 
 ### C5. Time to first bid
 
-`Core` · rank 5 of 11 · score **4.15** · evidence **S** · added in round 2
+`Core` · rank 5 of 12 · score **4.15** · evidence **S** · added in round 2
 
 *Scores: decision 4, goal link 4, diagnostic 4, early warning 5, measurable 4.*
 
@@ -2417,6 +2753,8 @@ FROM listings CROSS JOIN generate_series(0, 14) AS d GROUP BY 1, 2;   -- Postgre
 - **Formula:** Time from listing going live to the first bid, per car.
 - **Data needed:** `listed_at` and the first `bid_time` per listing, including cars that never get a bid.
 - **Evidence (S):** a16z time to match: for example, how long a user waits for a first quote.
+- **Who uses it:** Commercial, Product.
+- **In a sentence (sample numbers):** "Half of cars get a first bid within 40 minutes, and 6% get none."
 
 **Why it ranks here:** It is the first sign of demand for a car, and a long wait predicts unsold cars. It also tells a seller how fast the market responds.
 
@@ -2459,7 +2797,7 @@ FROM listings l LEFT JOIN bids b ON b.listing_id = l.listing_id GROUP BY l.listi
 
 ### C6. Sale price against market guide
 
-`Core` · rank 6 of 11 · score **4.00** · evidence **M** · from the first sheets
+`Core` · rank 6 of 12 · score **4.00** · evidence **M** · from the first sheets
 
 *Scores: decision 4, goal link 5, diagnostic 4, early warning 3, measurable 3.*
 
@@ -2468,6 +2806,8 @@ FROM listings l LEFT JOIN bids b ON b.listing_id = l.listing_id GROUP BY l.listi
 - **Formula:** Final sale price ÷ an independent market price guide.
 - **Data needed:** `sale_price` and `guide_price` per sale.
 - **Evidence (M):** Motorway claims 84% of sellers beat the market price (self-reported).
+- **Who uses it:** Commercial, Marketing.
+- **In a sentence (sample numbers):** "The median sale is 4% above the guide price."
 
 **Why it ranks here:** It connects dealer behaviour to seller value, which is the product promise. It is limited by the quality of the guide.
 
@@ -2510,7 +2850,7 @@ FROM completed_sales WHERE guide_price > 0 GROUP BY 1 ORDER BY 1;
 
 ### C7. Market depth: bidders per car
 
-`Core` · rank 7 of 11 · score **3.90** · evidence **S** · added in round 2
+`Core` · rank 7 of 12 · score **3.90** · evidence **S** · added in round 2
 
 *Scores: decision 4, goal link 4, diagnostic 4, early warning 4, measurable 3.*
 
@@ -2519,6 +2859,8 @@ FROM completed_sales WHERE guide_price > 0 GROUP BY 1 ORDER BY 1;
 - **Formula:** Distinct dealers who bid per car, and the share of cars with at least three bidders (set your own threshold).
 - **Data needed:** `listing_id`, `dealer_id` on every bid, and all listings so cars with zero bidders are counted.
 - **Evidence (S):** a16z market depth: whether there is enough supply and demand that fits.
+- **Who uses it:** Commercial.
+- **In a sentence (sample numbers):** "A third of cars attract only one bidder, so their price sits near the reserve."
 
 **Why it ranks here:** Competition sets the price. Cars with one bidder tend to sell near the reserve. It differs from bids per car, which can come from one dealer bidding repeatedly.
 
@@ -2563,7 +2905,7 @@ GROUP BY bidders ORDER BY bidders;
 
 ### C8. Dealer concentration and retention
 
-`Supporting` · rank 8 of 11 · score **3.85** · evidence **S** · from the first sheets
+`Supporting` · rank 8 of 12 · score **3.85** · evidence **S** · from the first sheets
 
 *Scores: decision 4, goal link 4, diagnostic 4, early warning 3, measurable 4.*
 
@@ -2572,6 +2914,8 @@ GROUP BY bidders ORDER BY bidders;
 - **Formula:** Share of purchases made by the largest dealers, and the share of dealers who buy again within 30 or 90 days.
 - **Data needed:** Purchases per dealer, and each dealer's first and later purchase dates.
 - **Evidence (S):** a16z concentration of supply and demand, and retention cohorts.
+- **Who uses it:** Commercial, Finance.
+- **In a sentence (sample numbers):** "The top 20% of dealers buy 51% of the cars."
 
 **Why it ranks here:** It shows risk (loss of a large dealer) and health (repeat buying) at once.
 
@@ -2614,9 +2958,63 @@ FROM (SELECT dealer_id, COUNT(*) AS purchases FROM purchases GROUP BY 1) t;
 
 **Trap:** State the retention window (30 or 90 days).
 
-### C9. Cars in the daily sale
+### C9. Dealer lifetime value and LTV to CAC
 
-`Supporting` · rank 9 of 11 · score **3.60** · evidence **M** · from the first sheets
+`Supporting` · rank 9 of 12 · score **3.85** · evidence **G** · adapted from the metrics cheatsheet
+
+*Scores: decision 5, goal link 5, diagnostic 3, early warning 2, measurable 2.*
+
+**Definition**
+- **What it is:** What a dealer is worth over the whole relationship, against what it cost to win.
+- **Formula:** LTV = average monthly contribution per active dealer × expected months active (1 ÷ monthly churn). Ratio = LTV ÷ dealer acquisition cost.
+- **Data needed:** Contribution per dealer per month, dealer churn from the retention cohorts, and dealer acquisition spend.
+- **Evidence (G):** Lifetime value and the LTV to CAC ratio are standard metrics in the cheatsheet. A rule of thumb of 3 to 1 or better appears only in secondary sources I found. Motorway does not publish it.
+- **Who uses it:** Commercial, Finance, Marketing.
+- **In a sentence (sample numbers):** "Large dealers return 5 times their acquisition cost, small dealers only 1.4 times."
+
+**Why it ranks here:** It sets the ceiling on what can be spent to win a dealer. It ranks low because it stacks three estimates (contribution, churn, cost), so it is slow and easy to get wrong.
+
+**Insights it can give**
+- A segment below the required ratio: stop paying to recruit it.
+- LTV rising through lower churn: retention work is paying off.
+- LTV high but payback long: profitable in the end, but cash is tied up. Read it with CAC payback.
+- **Read it with:** CAC payback, retention cohorts and net revenue retention.
+- **Decision it supports:** How much to spend on dealer recruitment, and on whom.
+
+**How to show it**
+- **Format:** Single value + chart.
+- **Main visual:** V8 Ranked horizontal bar chart. **Companion:** V1 Scorecard: one number with its change.
+- **Why:** A ratio per dealer segment against a reference line shows which segments are worth recruiting.
+- **Build notes:** Bars: LTV ÷ CAC by dealer size band or acquisition channel, with a reference line at the level the business requires.
+
+| Platform | Main (V8) | Companion (V1) |
+|---|---|---|
+| Looker Studio | Bar chart, sorted, with reference line | Scorecard with comparison |
+| Streamlit | `st.bar_chart(horizontal=True)`, Plotly for a threshold | `st.metric` (native) |
+| Python | `px.bar(orientation='h')` + `add_vline` | `go.Indicator` or a printed number |
+| SQL returns | one row per item, sorted, with its denominator | one row: value and prior value |
+| Antigravity IDE | notebook cell (test inline first), or Streamlit in a browser | printed value or DataFrame in a cell |
+
+```sql
+SELECT segment, avg_monthly_contribution / NULLIF(monthly_churn, 0) AS ltv,
+       avg_monthly_contribution / NULLIF(monthly_churn, 0) / NULLIF(acquisition_cost, 0) AS ltv_to_cac
+FROM dealer_segment_economics;   -- a view built from contribution, the retention cohorts and acquisition spend
+```
+
+**Drill:** Drill down by dealer size band and acquisition channel.
+
+**If the data is thin**
+
+| If you are missing | Use instead | What that still tells you | What you lose |
+|---|---|---|---|
+| Contribution per dealer | Revenue-based LTV, labelled as an upper bound | A ceiling | Profitability |
+| Reliable churn | Observed 12-month value per dealer cohort | What was actually earned in a year | The longer-run value |
+
+**Trap:** LTV is a forecast. State the churn assumption, and use contribution, not revenue.
+
+### C10. Cars in the daily sale
+
+`Supporting` · rank 10 of 12 · score **3.60** · evidence **M** · from the first sheets
 
 *Scores: decision 3, goal link 4, diagnostic 3, early warning 4, measurable 5.*
 
@@ -2625,6 +3023,8 @@ FROM (SELECT dealer_id, COUNT(*) AS purchases FROM purchases GROUP BY 1) t;
 - **Formula:** Count of cars entered into each day's online sale.
 - **Data needed:** `listing_id`, `sale_date`.
 - **Evidence (M):** Motorway states up to 2,000 cars a day and more than 350,000 across 2025.
+- **Who uses it:** Commercial, Operations.
+- **In a sentence (public figure):** "Up to 2,000 cars a day enter the daily sale."
 
 **Why it ranks here:** Supply is the raw material, but supply without sell-through is a cost, so it ranks mid-table.
 
@@ -2664,9 +3064,9 @@ FROM daily_sale_entries GROUP BY sale_date;
 
 **Trap:** Weekends are lower. Do not call that a drop.
 
-### C10. Motorway Pay adoption (dealers)
+### C11. Motorway Pay adoption (dealers)
 
-`Supporting` · rank 10 of 11 · score **3.20** · evidence **M** · from the first sheets
+`Supporting` · rank 11 of 12 · score **3.20** · evidence **M** · from the first sheets
 
 *Scores: decision 3, goal link 3, diagnostic 3, early warning 3, measurable 5.*
 
@@ -2675,6 +3075,8 @@ FROM daily_sale_entries GROUP BY sale_date;
 - **Formula:** Dealers using Motorway Pay ÷ buying dealers.
 - **Data needed:** `dealer_id` and whether the dealer paid through Motorway Pay in the period.
 - **Evidence (M):** Motorway states over 2,000 dealers use it. Earlier points on the sample line are invented.
+- **Who uses it:** Commercial, Product.
+- **In a sentence (public figure):** "Over 2,000 dealers now use Motorway Pay."
 
 **Why it ranks here:** A product adoption measure. It matters for revenue and stickiness, but it does not drive the marketplace's core outcomes.
 
@@ -2715,9 +3117,9 @@ FROM purchases GROUP BY 1;
 
 **Trap:** This counts dealers. The Finance version counts sales.
 
-### C11. Verified dealers
+### C12. Verified dealers
 
-`Supporting` · rank 11 of 11 · score **2.55** · evidence **M** · from the first sheets
+`Supporting` · rank 12 of 12 · score **2.55** · evidence **M** · from the first sheets
 
 *Scores: decision 2, goal link 3, diagnostic 2, early warning 2, measurable 5.*
 
@@ -2726,6 +3128,8 @@ FROM purchases GROUP BY 1;
 - **Formula:** Count of dealers approved to bid.
 - **Data needed:** `dealer_id`, `verified_date`, `status`.
 - **Evidence (M):** Motorway states 7,500 to 8,000+ verified dealers (figures differ by page). The climb on the sample chart is invented.
+- **Who uses it:** Commercial.
+- **In a sentence (public figure):** "There are about 8,000 verified dealers."
 
 **Why it ranks here:** It is a vanity figure on its own, because verified dealers who do not bid add nothing. It becomes useful beside active dealers.
 
@@ -2788,6 +3192,8 @@ FROM (SELECT DATE_TRUNC('month', verified_date) AS month, COUNT(*) AS new_dealer
 - **Formula:** Sellers reaching a step ÷ sellers at the step before (valuation, profile and photos, daily sale, offer accepted).
 - **Data needed:** An event table: `user_id`, `step`, `timestamp`, plus `device` and `app_version`.
 - **Evidence (I):** Follows Motorway's published how-it-works journey.
+- **Who uses it:** Product, Marketing.
+- **In a sentence (sample numbers):** "31% of sellers who enter a registration go on to accept an offer, and account creation loses 17 points."
 
 **Why it ranks here:** It is the product team's map of lost revenue. It gives a specific step to fix, and it can be cut by device, version and channel.
 
@@ -2839,6 +3245,8 @@ FROM seller_events GROUP BY step_order, step ORDER BY step_order;
 - **Formula:** Of dealers first active in a month, the share active again in each later month, by starting month.
 - **Data needed:** `dealer_id`, `first_active_month`, `active_month`.
 - **Evidence (S):** a16z user retention and core-action retention cohorts.
+- **Who uses it:** Product, Commercial.
+- **In a sentence (sample numbers):** "Month-1 retention fell from 80% for the April dealer cohort to 70% for August."
 
 **Why it ranks here:** Demand depends on dealers staying. Cohorts show whether newer dealers are better or worse than older ones, which no average can.
 
@@ -2894,6 +3302,8 @@ FROM first f JOIN act a USING (dealer_id) GROUP BY 1, 2;   -- divide by the mont
 - **Formula:** (Final sale price − first estimate) ÷ first estimate.
 - **Data needed:** `first_estimate` and `final_sale_price` per car.
 - **Evidence (I):** Seller reviews mention valuations that change. Not published by Motorway.
+- **Who uses it:** Product, Commercial.
+- **In a sentence (sample numbers):** "First estimates run about 2% above the final price, and 55% land within 5%."
 
 **Why it ranks here:** A biased estimate makes sellers reject offers or feel misled, and it affects conversion and trust together.
 
@@ -2945,6 +3355,8 @@ FROM valuations_with_outcome GROUP BY 1 ORDER BY 1;
 - **Formula:** Sellers passing ID and document checks first time ÷ sellers checked, and the minutes taken.
 - **Data needed:** `check_type`, `result`, `started_at`, `finished_at`.
 - **Evidence (I):** AI seller verification with face capture launched in 2026. The KPI is inferred.
+- **Who uses it:** Product, Operations.
+- **In a sentence (sample numbers):** "90% of sellers pass verification first time, but only 82% for finance letters."
 
 **Why it ranks here:** A hard check loses honest sellers. A fast one that misses fraud loses dealers. This is where product friction meets risk.
 
@@ -2997,6 +3409,8 @@ FROM verification_checks GROUP BY check_type;
 - **Formula:** Collections where the car matched its grade (1 to 5) ÷ all collections.
 - **Data needed:** `listed_grade` and `collection_check_result` (ideally the grade found).
 - **Evidence (I):** Motorway rolled out a 1 to 5 condition grading system. The accuracy KPI is inferred.
+- **Who uses it:** Product, Operations.
+- **In a sentence (sample numbers):** "Condition grades match at collection 96% of the time for grade 1 and 85% for grade 5."
 
 **Why it ranks here:** Grade accuracy decides whether dealers trust listings, which drives bids and prices.
 
@@ -3047,6 +3461,8 @@ SELECT listed_grade, found_grade, COUNT(*) AS cars FROM collections GROUP BY 1, 
 - **Formula:** Of sellers whose first completed sale was in a quarter, the share who completed another within 12 months.
 - **Data needed:** `seller_id` and `completed_date` for each completed sale.
 - **Evidence (S):** a16z core-action retention: retention measured by the core action (for Motorway, a completed sale) rather than by logins.
+- **Who uses it:** Product, Marketing.
+- **In a sentence (sample numbers):** "5.3% of sellers from the latest cohort sold again within 12 months, up from 4.1%."
 
 **Why it ranks here:** It captures long-run value. Car sellers return rarely, so low values are normal and the trend matters more than the level.
 
@@ -3101,6 +3517,8 @@ FROM first_sale f JOIN completed_sales s USING (seller_id) GROUP BY 1;
 - **Formula:** Average app store rating, and crash-free sessions ÷ all sessions.
 - **Data needed:** Session logs with a crash flag, `app_version`, and store ratings.
 - **Evidence (I):** Motorway has iOS and Android seller apps. No figure is used here.
+- **Who uses it:** Product, Engineering.
+- **In a sentence (sample numbers):** "Crash-free sessions dropped to 98.1% after the September release, below the 99% threshold."
 
 **Why it ranks here:** Crash-free sessions react within hours of a release, so this is the fastest early warning in product.
 
@@ -3153,6 +3571,8 @@ FROM app_sessions GROUP BY 1, 2;
 - **Formula:** At the 75th percentile of page loads, split by mobile and desktop: LCP (loading), INP (responsiveness), CLS (layout shift).
 - **Data needed:** Real-user performance data (a field-data source) with device and page.
 - **Evidence (S):** Google's web.dev: good means LCP 2.5 seconds or less, INP 200 milliseconds or less, CLS 0.1 or less, at the 75th percentile.
+- **Who uses it:** Product, Engineering, Marketing.
+- **In a sentence (sample numbers):** "Mobile LCP is 3.1 seconds at the 75th percentile, above Google's 2.5 second threshold."
 
 **Why it ranks here:** Slow pages lose sellers before the funnel records them. It ranks mid-table because it is a hygiene factor with clear thresholds.
 
@@ -3207,6 +3627,8 @@ FROM page_performance GROUP BY 1, 2;
 - **Formula:** For each dealer, the number of days active in the last 30. The curve is how many dealers fall at each count.
 - **Data needed:** `dealer_id` and `activity_date`.
 - **Evidence (S):** a16z power user curves (L30 or L7 histograms).
+- **Who uses it:** Product, Commercial.
+- **In a sentence (sample numbers):** "A fifth of dealers are active on 8 or more days a month."
 
 **Why it ranks here:** It shows whether usage is concentrated in a few dealers or spread. A shift to the right is a sign of habit.
 
@@ -3260,6 +3682,8 @@ GROUP BY active_days ORDER BY active_days;
 - **Formula:** Sellers buying the paid badge ÷ sellers offered it. Compare the sell rate with the badge and without.
 - **Data needed:** `offered_badge`, `bought_badge`, and the sale outcome, ideally with a control group.
 - **Evidence (I):** Motorway tested a £29.99 paid listing badge. The KPI is inferred.
+- **Who uses it:** Product, Finance.
+- **In a sentence (sample numbers):** "7.9% of sellers offered the paid badge bought it."
 
 **Why it ranks here:** A test read-out more than an ongoing KPI. It matters until the decision is made.
 
@@ -3313,6 +3737,8 @@ FROM badge_offers GROUP BY 1;
 - **Formula:** Fields read correctly from service documents ÷ fields checked.
 - **Data needed:** A sample audit: for each field, the machine value and the human-checked value.
 - **Evidence (M):** Motorway's own blog claims 94.7%.
+- **Who uses it:** Product.
+- **In a sentence (public figure):** "Motorway reports 94.7% accuracy for service-history extraction."
 
 **Why it ranks here:** An internal quality measure for one feature. It matters for trust but affects a narrower part of the journey.
 
@@ -3400,6 +3826,9 @@ Read through search summaries only (primary pages not opened):
 - Inovia on CAC payback: https://www.inovia.vc/?p=7848
 - Bullet graph as a gauge replacement (Stephen Few's design, via secondary summaries): https://www.tableau.com/chart/what-is-bullet-graph
 - The Motorway figures are sourced in `KPI_REFERENCE.md`.
+
+Supplied by you:
+- Business Metrics Cheatsheet for Data Analysts, The Analytics Accelerator: https://analyticsaccelerator.notion.site/business-metrics-cheatsheet-7958e928-58a3-4450-9598 . Used for five adapted KPIs (tag G or S), the translation table in 1.4, and the idea of giving each KPI its users and an example sentence. Its definitions and sentences are not copied here.
 
 Not found, so not claimed:
 - OPENLANE's formula for its conversion rate.

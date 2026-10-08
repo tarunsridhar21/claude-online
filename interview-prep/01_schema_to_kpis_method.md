@@ -1,6 +1,6 @@
 # From schema to KPIs to story: the method
 
-This is the procedure to run when Tarun sends a schema screenshot, column names or a data brief. It sits on top of `KPI_PLAYBOOK.md` (the source of the KPI IDs F1–P11 and visuals V1–V17) and `00_context.md` (the role and interviewer).
+This is the procedure to run (playbook v2: 59 KPIs, F1–F13, M1–M12, O1–O11, C1–C12, P1–P11) when Tarun sends a schema screenshot, column names or a data brief. It sits on top of `KPI_PLAYBOOK.md` (the source of the KPI IDs F1–P11 and visuals V1–V17) and `00_context.md` (the role and interviewer).
 
 The live task is 30 minutes. Everything here is built for speed: read the schema, then return a ranked list in one pass.
 
@@ -53,34 +53,42 @@ Scan the schema for these **signal columns**. Each one unlocks the KPIs on its r
 
 | If you see… | You can build | Notes |
 |---|---|---|
-| `sale_price` / `sold_price` + sale date + status | **F2** GMV, **O6** completed sales, average sale price | Completed only. Watch for placeholder prices. |
-| fee / revenue / `amount` (+ `fee_type`) | **F4** revenue; + sale price → **F5** take rate; + count of sales → **F10** revenue per car | |
-| + `dealer_id` on fees | **F6** revenue per active dealer | Show the median beside the mean. |
+| `sale_price` / `sold_price` + sale date + status | **F2** GMV, **O6** completed sales, **F8** average sale price (mean + median) | Completed only. Watch for placeholder prices. |
+| fee / revenue / `amount` (+ `fee_type`) | **F4** revenue; + sale price → **F6** take rate; + count of sales → **F12** revenue per car | |
+| + `dealer_id` on fees | **F7** revenue per active dealer; with 13+ months → **F5** dealer net revenue retention | Show the median beside the mean. NRR: exclude new dealers. |
 | Any **variable cost** (marketing spend, `transport_cost`, support cost) | **F1** contribution per car (with revenue) | The #1 Finance KPI. Write down the allocation rule. |
-| marketing `spend` by `channel` | **M7** cost per valuation; + sales by origin channel → **M2** cost per car sold; + contribution → **M4** CAC payback | Use mature cohorts for cost per sale. |
-| `valuation_id` + `created_at` (+ `channel`) | **M3** valuations started; + channel → **M6** organic share | Remove tests, normalise channel names. |
+| Company P&L lines (operating result, cost lines, cash) | **F9** adjusted EBITDA, **F10** opex share of revenue, **F11** pre-tax loss, **F3** burn and runway | Management-accounts data, rare in a live task. |
+| marketing `spend` by `channel` | **M8** cost per valuation; + sales by origin channel → **M2** cost per car sold; + contribution → **M4** CAC payback | Use mature cohorts for cost per sale. |
+| `valuation_id` + `created_at` (+ `channel`) | **M3** valuations started; + channel → **M7** organic share; + revenue of resulting sales → **M6** revenue per valuation | Remove tests, normalise channel names. M6 vs M8 = margin per lead. |
 | Step timestamps / flags (`profile_done_at`, `listed_at`, `accepted_at`, `completed_at`) | **P1** funnel by step, **M1** valuation-to-sale, **O5** time to sell, **O1** completion rate | P1 and M1 overlap, so present them as one funnel. |
-| `listing_id` + outcome (sold/unsold) + sale date | **C1** sell-through, **C9** cars in daily sale | Unsold rows are essential. Without them there is no rate. |
+| `listing_id` + outcome (sold/unsold) + sale date | **C1** sell-through, **C10** cars in daily sale | Unsold rows are essential. Without them there is no rate. |
 | `first_listed_at` + `sold_at` (or `attempt_no`) | **C4** cumulative sell-through curve | Cut cohorts at their maturity. |
 | **Bids table** (`listing_id`, `dealer_id`, `bid_time`, `bid_amount`) | **C3** bids per car, **C5** time to first bid, **C7** bidders per car, **C2** active dealers | Left join from listings so zero-bid cars stay. |
 | `dealer_id` on purchases with dates | **C2** active dealers, **C8** concentration and retention, **P2** retention cohorts, **P9** engagement curve | |
-| `verified_date` / dealer status | **C11** verified dealers (only useful beside C2) | |
-| `guide_price` / market value | **C6** price vs guide, **M9** seller price advantage | No guide → proxy vs median of similar cars, labelled. |
+| + dealer contribution, churn and acquisition spend | **C9** dealer LTV and LTV:CAC | Stacks three estimates. State the churn assumption. |
+| `verified_date` / dealer status | **C12** verified dealers (only useful beside C2) | |
+| `guide_price` / market value | **C6** price vs guide, **M10** seller price advantage | No guide → proxy vs median of similar cars, labelled. |
 | First estimate / `valuation_amount` vs final price | **P3** valuation accuracy | Bias (median ≠ 0) matters more than spread. |
 | `price_at_listing` vs `price_at_collection` (+ reason) | **O3** price changed at collection | |
-| Claims table | **O2** claims rate by dealer | Minimum purchases per dealer. |
+| Claims table (`dealer_id`) | **O2** claims rate by dealer; + `cost`, `opened_at`, `closed_at` → **O9** claim cost and resolution time | Minimum purchases per dealer. Report open claims beside O9. |
 | `collected_at` + `paid_at` | **O7** days to seller payment | Working days. |
 | Slot times + actual collection (+ transport cost) | **O8** on-time collection and cost per move | |
 | Support tickets (+ reason) | **O4** contacts per 100 sales | |
-| Survey score / reviews | **M5** NPS/CSAT, **M8** review score | |
-| `payment_method` | **F11** Pay share of sales, **C10** Pay adoption by dealer | |
+| Survey score / reviews | **M5** NPS/CSAT, **M9** review score | |
+| `payment_method` | **F13** Pay share of sales, **C11** Pay adoption by dealer | |
 | `seller_id` with repeat sales | **P6** repeat seller rate | |
 | `listed_grade` vs `found_grade` | **P5** condition grade accuracy | |
-| Verification checks / fraud `flag_type` | **P4**, **O10**, **O9** | |
-| Sessions, crashes, web vitals, visits | **P7**, **P8**, **M10** | |
+| Verification checks / fraud `flag_type` | **P4** verification pass rate, **O11** verification coverage, **O10** problem vehicles stopped | |
+| Sessions, crashes, web vitals, visits | **P7**, **P8**, **M11** | |
+| Brand survey | **M12** brand awareness | |
 | `region`, `make`, `model`, `fuel_type`, `age`, `mileage`, `price` bands | **Drill-down dimensions** for everything above | A sell-through fall usually hides in one slice. |
 
-**If the data is not marketplace-shaped** (e.g. a generic sales, marketing or ops table), don't force playbook IDs. Define KPIs from scratch and score them with the same five criteria in Step 3.
+**If the data is not marketplace-shaped** (e.g. SaaS, retail, logistics, generic sales or marketing data): use **playbook §1.4**, which translates general metrics (CAC, LTV, ARPU, AOV, churn, NRR, DAU/MAU, fill rate, on-time delivery, return rate…) to the playbook's KPIs. Use their formulas, visuals and rules, but name them in the dataset's own language. Anything not in §1.4: define it fresh and score it with the five criteria in Step 3.
+
+**Use each card's extras:**
+- **"Who uses it"** fills the stakeholder column (Marketing, Finance, Product, Commercial, Operations, Exec), which maps directly to the teams in the job description.
+- **"In a sentence"** is a ready template for saying the KPI out loud. Swap in his real numbers. The card's numbers are samples: never quote them as Motorway figures.
+- **Evidence tag G** = general business metric adapted to a marketplace. Like I, never say "Motorway tracks this".
 
 ## Step 3: Rank them
 
@@ -98,7 +106,7 @@ Start from the playbook score (out of 5), then adjust for *this* data and *this*
 - **+0.25 to +0.5** if it directly answers the brief.
 - **−0.5** if it needs a proxy (say what the proxy is and label it on the chart).
 - **Drop it** if a required field is missing. List it under "Can't build: would need X". That is a good talking point, not a weakness.
-- **Merge duplicates** (P1 + M1 funnel; C2 + C11 active vs verified) instead of listing both.
+- **Merge duplicates** (P1 + M1 funnel; C2 + C12 active vs verified; M6 beside M8 per channel) instead of listing both.
 - Ties: early warning, then decision value, then goal link.
 
 **Tiers for a 30-minute task:**
@@ -221,8 +229,8 @@ Pick 2–3, don't interrogate:
 1. **What this data is**: tables, grain, joins, date range, first sanity flags (≤6 lines).
 2. **Ranked KPI table**:
 
-   | Rank | KPI (ID) | Formula with *your* column names | Score (adj.) | Why it matters here | Exec / Manager | Main visual + companion | Build in |
-   |---|---|---|---|---|---|---|---|
+   | Rank | KPI (ID) | Formula with *your* column names | Score (adj.) | Why it matters here | Who uses it | Exec / Manager | Main visual + companion | Build in |
+   |---|---|---|---|---|---|---|---|---|
 
 3. **Can't build (and what's missing)**: each with the proxy, if any.
 4. **Dashboard sketch**: exec page and manager page.
@@ -246,10 +254,10 @@ Pick 2–3, don't interrogate:
 |---|---|---|---|---|---|---|
 | 1 | Seller funnel (P1 + M1) | distinct valuations → listed → `outcome='sold'` | 4.85 | Shows where sellers are lost; cut by `channel` | Both | V11 funnel + V2 line |
 | 2 | Sell-through (C1) | sold listings ÷ listings | 4.75 | Marketplace liquidity; drills by region/make | Both | V2 line + V1 |
-| 3 | Active dealers (C2 vs C11) | distinct `bids.dealer_id` per month vs verified | 4.65 | Demand side; active vs verified gap | Both | V4 columns + V1 |
+| 3 | Active dealers (C2 vs C12) | distinct `bids.dealer_id` per month vs verified | 4.65 | Demand side; active vs verified gap | Both | V4 columns + V1 |
 | 4 | Bids per car (C3) | bids ÷ listings | 4.55 | Leads sell-through | Manager | V9 combo |
 | 5 | Valuation accuracy (P3) | (`sold_price` − `estimated_price`) ÷ `estimated_price` | 4.40 | Explains rejected offers | Manager | V12 histogram |
-| 6 | GMV (F2) | SUM(`sold_price`) where sold | 4.30 | Size of the market | Exec | V3 line + V1 |
+| 6 | GMV (F2) + average sale price (F8) | SUM(`sold_price`) where sold; mean and median `sold_price` | 4.30 / 3.65 | Size of the market, and whether it moved on volume or price | Exec | V3 line + V1 |
 | 7 | Cumulative sell-through (C4) | share sold by day N since `listed_at` | 4.20 | Speed and plateau | Manager | V15 |
 | 8 | Time to first bid (C5) | MIN(`bid_time`) − `listed_at` | 4.15 | Earliest demand signal | Manager | V12 |
 | 9 | Bidders per car (C7) | distinct dealers per listing | 3.90 | Competition sets price | Manager | V12 |

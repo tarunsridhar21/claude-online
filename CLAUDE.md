@@ -3,7 +3,7 @@
 Tarun is preparing for a 30 min live data task + 30 min presentation with Shuma (BI Team Lead) at Motorway.
 
 - `interview-prep/00_context.md`: role, interviewer priorities, logistics.
-- `interview-prep/KPI_PLAYBOOK.md`: 54 ranked KPIs (F/M/O/C/P IDs), visuals V1–V17, rules.
+- `interview-prep/KPI_PLAYBOOK.md`: 59 ranked KPIs (v2: F1–F13, M1–M12, O1–O11, C1–C12, P1–P11), visuals V1–V17, rules. §1.4 translates general metrics (CAC, LTV, AOV, churn…) for non-marketplace data. Each card has "Who uses it" and an example sentence (sample numbers, never quote as Motorway figures).
 - `interview-prep/01_schema_to_kpis_method.md`: **the procedure to follow** whenever Tarun shares a schema, column names or a data brief: profile, map columns to KPIs, rank, choose visuals (exec vs manager), sanity-check, then tell the story.
 
 - `interview-prep/STORYTELLING_GUIDE.md`: metric trees, identity checks, money bridge, What → Why → So what → Now what.
