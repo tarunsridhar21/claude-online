@@ -133,7 +133,10 @@ INFO BUTTONS (required)
     How it's calculated: the formula in words, with the denominator spelled out.
     Why this chart: why this visual suits it.
     How to read it: what a rise or fall MEANS for the team (KPI-level reading, not a deep dive).
-- Keep all INFO text in one dict at the top of dashboard.py. Write it from the specs below.
+- Keep all INFO text, chart TITLES and COLOURS in one shared file, app/kpi_info.py
+  (dicts INFO, TITLES, COLOURS, and KPI_DEFS for the definitions table). dashboard.py imports them.
+  The Excel build (prompt 3) will reuse the same file, so both outputs say exactly the same thing.
+  Write the INFO text from the specs below.
 
 LAYOUT
 Row 1: headline (4 st.metric with border=True, in st.columns(4)):
@@ -209,5 +212,7 @@ FINISH
 - Then print, for the latest full reporting week and for the May baseline, the value of every headline
   and core KPI in a small table, so I can write the insights. Do NOT write the insights yourself.
 - Save the team x week, location x week and agent x week tables to output/kpis/*.csv (needed for the
-  Excel step later).
+  Excel step later). The agent x week table must keep every numerator and denominator separately
+  (hours by shift_group, contacts / answered / talk seconds split by channel, fresh_rfs under BOTH
+  dedup methods, reheat_rfs), not just the rates, so Excel can recompute rates after filtering.
 ```
